@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ChakaNoks SCMS - Dashboard</title>
-  <style>
+<meta charset="utf-8" />
+<title>Inventory Staff Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -84,8 +84,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       position: relative; overflow: hidden;
       transition: transform 0.3s ease;
-      min-height: 220px;
-      display: flex; flex-direction: column;
     }
     .card:hover { transform: translateY(-5px); }
     .card::before {
@@ -98,38 +96,7 @@
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th,td { text-align: left; padding: 6px 0; border-bottom: 1px solid #333; }
     th { color: #ffd700; font-weight: bold; }
-
-    /* Button styles */
-    .btn, .btn-outline, .btn-gold, .btn-outline-gold {
-      font-size: 13px;
-      padding: 6px 14px;
-      border-radius: 8px;
-      margin-right: 6px;
-      margin-bottom: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      outline: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn, .btn-gold {
-      background: linear-gradient(135deg, #ffd700, #ffb300);
-      border: none;
-      color: #000;
-    }
-    .btn:hover, .btn-gold:hover {
-      background: linear-gradient(135deg, #ffca00, #ffa500);
-      color: #000;
-    }
-    .btn-outline, .btn-outline-gold {
-      background: transparent;
-      border: 1px solid #ffd700;
-      color: #ffd700;
-    }
-    .btn-outline:hover, .btn-outline-gold:hover {
-      background: #ffd700;
-      color: #000;
-    }
-  </style>
+</style>
 </head>
 <body>
 <div class="layout-container">
@@ -137,13 +104,13 @@
   <aside class="sidebar">
     <div class="logo">
       <h1>CHAKANOKS</h1>
-      <p>SCMS</p>
+      <p>Inventory Staff</p>
     </div>
     <nav class="nav">
       <a href="#" class="active">Dashboard</a>
-      <a href="#">Inventory</a>
-      <a href="#">Purchase Req</a>
-      <a href="#">Transfers</a>
+      <a href="#">Stock Levels</a>
+      <a href="#">Deliveries</a>
+      <a href="#">Damaged/Expired</a>
       <a href="#">Reports</a>
     </nav>
     <div class="logout">Logout</div>
@@ -152,125 +119,79 @@
   <!-- Main -->
   <div class="main-content">
     <div class="header">
-      <h2>Branch Manager</h2>
+      <h2>Inventory Staff</h2>
       <div class="branch-info">Branch: Davao City</div>
     </div>
-    <div class="cards" id="cards"></div>
+    <div class="cards"></div>
   </div>
 </div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav a");
-  const cardsContainer = document.getElementById("cards");
+  const cardsContainer = document.querySelector(".cards");
+  const headerTitle = document.querySelector(".header h2");
 
-  const cardInventory = `
+  const cardStockLevels = `
     <div class="card">
-      <h3>Current Inventory</h3>
+      <h3>Stock Levels</h3>
       <div class="kpi">12,480</div>
-      <div class="muted">Units on hand</div>
+      <div class="muted">Total units in inventory</div>
       <table>
         <tr><th>Category</th><th>Units</th></tr>
         <tr><td>Beverages</td><td>4,210</td></tr>
         <tr><td>Snacks</td><td>3,890</td></tr>
         <tr><td>Personal Care</td><td>1,620</td></tr>
       </table>
-      <div class="mt-3 d-flex flex-wrap gap-2">
-        <button class="btn btn-gold btn-custom">+ Add Inventory</button>
-        <button class="btn btn-outline-gold btn-custom">View</button>
-        <button class="btn btn-outline-gold btn-custom">Edit</button>
-      </div>
     </div>
   `;
 
-  const cardLowStock = `
+  const cardDeliveries = `
     <div class="card">
-      <h3>Low-Stock Alerts</h3>
-      <div class="kpi">14</div>
-      <div class="muted">Items below threshold</div>
+      <h3>Recent Deliveries</h3>
+      <div class="kpi">5</div>
+      <div class="muted">Received this week</div>
       <table>
-        <tr><th>Item</th><th>Stock</th></tr>
-        <tr><td>Sardines 155g</td><td>22</td></tr>
-        <tr><td>Rice 5kg</td><td>9</td></tr>
-        <tr><td>Soap Bar</td><td>15</td></tr>
+        <tr><th>Date</th><th>Items</th></tr>
+        <tr><td>Aug 12</td><td>Rice 50kg</td></tr>
+        <tr><td>Aug 13</td><td>Soda Cases</td></tr>
+        <tr><td>Aug 14</td><td>Shampoo Packs</td></tr>
       </table>
-      <div class="mt-3">
-        <button class="btn btn-gold btn-custom">Reorder</button>
-      </div>
     </div>
   `;
 
-  const cardPurchase = `
+  const cardDamaged = `
     <div class="card">
-      <h3>Purchase Requests</h3>
-      <div class="kpi">6</div>
-      <div class="muted">Pending approval</div>
+      <h3>Damaged / Expired Goods</h3>
+      <div class="kpi">8</div>
+      <div class="muted">Reported this month</div>
       <table>
-        <tr><th>PR No.</th><th>Status</th></tr>
-        <tr><td>PR-00138</td><td>Review</td></tr>
-        <tr><td>PR-00139</td><td>Approval</td></tr>
-        <tr><td>PR-00140</td><td>Draft</td></tr>
+        <tr><th>Item</th><th>Qty</th></tr>
+        <tr><td>Milk 1L</td><td>3</td></tr>
+        <tr><td>Bread Loaf</td><td>5</td></tr>
       </table>
-      <div class="mt-3">
-        <button class="btn btn-gold btn-custom">+ New Request</button>
-      </div>
-    </div>
-  `;
-
-  const cardTransfers = `
-    <div class="card">
-      <h3>Transfers</h3>
-      <div class="kpi">3</div>
-      <div class="muted">Awaiting action</div>
-      <table>
-        <tr><th>Ref</th><th>Status</th></tr>
-        <tr><td>TX-0192</td><td>Incoming</td></tr>
-        <tr><td>TX-0193</td><td>Await Pickup</td></tr>
-      </table>
-      <div class="mt-3">
-        <button class="btn btn-gold btn-custom">+ New Transfer</button>
-      </div>
-    </div>
-  `;
-
-  const cardApprovals = `
-    <div class="card">
-      <h3>Approvals</h3>
-      <div class="kpi">4</div>
-      <div class="muted">Need your approval</div>
-      <table>
-        <tr><th>Type</th><th>Ref</th></tr>
-        <tr><td>PR</td><td>PR-00139</td></tr>
-        <tr><td>Transfer</td><td>TX-0193</td></tr>
-      </table>
-      <div class="mt-3">
-        <button class="btn btn-outline-gold btn-custom">Review All</button>
-      </div>
     </div>
   `;
 
   const cardReports = `
     <div class="card">
-      <h3>Reports Snapshot</h3>
-      <div class="kpi">7</div>
-      <div class="muted">Available today</div>
+      <h3>Reports</h3>
+      <div class="kpi">4</div>
+      <div class="muted">Available</div>
       <table>
-        <tr><th>Report</th><th>Period</th></tr>
-        <tr><td>Daily Sales</td><td>Today</td></tr>
-        <tr><td>Inventory Aging</td><td>This Week</td></tr>
-        <tr><td>Stock Movement</td><td>This Month</td></tr>
+        <tr><th>Type</th><th>Period</th></tr>
+        <tr><td>Stock Movement</td><td>Today</td></tr>
+        <tr><td>Delivery Summary</td><td>This Week</td></tr>
       </table>
-      <div class="mt-3">
-        <button class="btn btn-gold btn-custom">Generate Report</button>
-      </div>
     </div>
   `;
 
   const sections = {
-    Dashboard: cardInventory + cardLowStock + cardPurchase + cardTransfers + cardApprovals + cardReports,
-    Inventory: cardInventory + cardLowStock,
-    "Purchase Req": cardPurchase + cardApprovals,
-    Transfers: cardTransfers,
+    Dashboard: cardStockLevels + cardDeliveries + cardDamaged + cardReports,
+    "Stock Levels": cardStockLevels,
+    Deliveries: cardDeliveries,
+    "Damaged/Expired": cardDamaged,
     Reports: cardReports
   };
 
@@ -281,8 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       navLinks.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
-
       const sectionName = link.textContent.trim();
+      headerTitle.textContent = sectionName;
       cardsContainer.innerHTML = sections[sectionName] || "<div class='card'><h3>Not Found</h3></div>";
     });
   });

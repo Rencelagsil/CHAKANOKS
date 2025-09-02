@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChakaNoks SCMS - Login</title>
+
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -261,8 +265,10 @@
     </div>
   </div>
 
+  <!-- ✅ Bootstrap JS Bundle (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
-    // DOM elements
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -272,7 +278,6 @@
     const errorMessage = document.getElementById('errorMessage');
     const successMessage = document.getElementById('successMessage');
 
-    // Show/hide messages
     function showMessage(element, message, isError = false) {
       element.textContent = message;
       element.style.display = 'block';
@@ -288,7 +293,6 @@
       }, 5000);
     }
 
-    // Handle form submission
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -296,23 +300,16 @@
       const password = passwordInput.value.trim();
       const remember = document.getElementById('remember').checked;
 
-      // Validate inputs
       if (!email || !password) {
         showMessage(errorMessage, 'Please fill in all fields.', true);
         return;
       }
 
-      // Show loading state
       loginBtn.disabled = true;
       loginBtnText.style.display = 'none';
       loginBtnLoading.style.display = 'inline';
 
-      // Simulate authentication delay
       setTimeout(() => {
-        // Here you would typically make an API call to your backend
-        // For now, we'll just show a success message and redirect
-        
-        // Store user session
         const userSession = {
           email: email,
           loginTime: new Date().toISOString(),
@@ -320,17 +317,14 @@
         };
         localStorage.setItem('chakanoks_user_session', JSON.stringify(userSession));
         
-        // Show success message
         showMessage(successMessage, 'Login successful! Redirecting to dashboard...');
         
-        // Redirect to main dashboard after 2 seconds
         setTimeout(() => {
-          window.location.href = 'index.html'; // Assuming the main dashboard is index.html
+          window.location.href = 'index.html'; 
         }, 2000);
       }, 1500);
     });
 
-    // Check if user is already logged in
     function checkExistingSession() {
       const session = localStorage.getItem('chakanoks_user_session');
       if (session) {
@@ -340,7 +334,6 @@
           const now = new Date();
           const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
           
-          // Session expires after 8 hours (or 30 days if remember me was checked)
           const maxHours = userSession.remember ? 24 * 30 : 8;
           if (hoursDiff < maxHours) {
             showMessage(successMessage, 'Welcome back! Redirecting...');
@@ -348,7 +341,6 @@
               window.location.href = 'index.html';
             }, 2000);
           } else {
-            // Session expired
             localStorage.removeItem('chakanoks_user_session');
           }
         } catch (e) {
@@ -357,22 +349,17 @@
       }
     }
 
-    // Initialize page
     document.addEventListener('DOMContentLoaded', function() {
       checkExistingSession();
-      
-      // Focus on email input
       emailInput.focus();
     });
 
-    // Add some interactive effects
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' && document.activeElement === passwordInput) {
         loginForm.dispatchEvent(new Event('submit'));
       }
     });
 
-    // Handle forgot password
     document.querySelector('.forgot-password').addEventListener('click', function(e) {
       e.preventDefault();
       alert('Please contact the system administrator to reset your password.\nEmail: support@chakanoks.com');

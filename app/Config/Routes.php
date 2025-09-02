@@ -15,3 +15,9 @@ $routes->get('/branchmanager', 'BranchManager::index');
 
 $routes->get('/', 'Dashboard::index');
 $routes->get('/dashboard', 'Dashboard::index');
+
+$routes->get('/', 'Staff::index');
+$routes->get('/staff', 'Staff::index');
+
+$routes->get('/', 'Logistics::index');
+$routes->get('/logistics', 'Logistics::index');
