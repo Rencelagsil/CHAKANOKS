@@ -12,3 +12,6 @@ $routes->get('/', 'Login::index');
 $routes->get('login', 'Login::index');
 $routes->post('/login/auth', 'Login::auth');
 $routes->get('/branchmanager', 'BranchManager::index');
+
+$routes->get('/', 'Dashboard::index');
+$routes->get('/dashboard', 'Dashboard::index');

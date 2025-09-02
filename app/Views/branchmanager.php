@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   :root{
-    --primary:#f97316; /* warm orange */
+    --primary:#f97316;
     --primary-dark:#d26010;
     --ink:#222;
     --muted:#666;
@@ -27,7 +27,7 @@
     height:100vh;
   }
 
-  /* Sidebar nav */
+  /* Sidebar */
   .sidebar{
     background:linear-gradient(180deg, var(--primary), var(--primary-dark));
     color:#fff;
@@ -43,9 +43,7 @@
     color:#fff;
     letter-spacing:1px;
   }
-  .nav{
-    flex:1;
-  }
+  .nav{flex:1;}
   .nav a{
     display:block;
     padding:12px 20px;
@@ -68,16 +66,13 @@
     border-top:1px solid rgba(255,255,255,0.3);
     cursor:pointer;
     text-align:center;
-    color:#fff;
     font-weight:bold;
     background:rgba(255,255,255,0.1);
     transition:0.2s;
   }
-  .logout:hover{
-    background:rgba(255,255,255,0.2);
-  }
+  .logout:hover{background:rgba(255,255,255,0.2);}
 
-  /* Main area */
+  /* Main */
   .main{
     display:grid;
     grid-template-rows: 60px 1fr;
@@ -92,16 +87,13 @@
     background:#fff;
     box-shadow:0 2px 4px rgba(0,0,0,0.05);
   }
-  .branch-info{
-    font-size:14px;
-    color:var(--muted);
-  }
+  .branch-info{font-size:14px;color:var(--muted);}
 
-  /* Cards grid */
+  /* Cards */
   .cards{
     padding:20px;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap:20px;
     overflow-y:auto;
   }
@@ -117,41 +109,38 @@
     transform:translateY(-4px);
     box-shadow:0 4px 12px rgba(0,0,0,0.1);
   }
-  .card h3{
-    margin:0 0 10px;
-    font-size:16px;
-    color:var(--primary-dark);
+  .card h3{margin:0 0 10px;font-size:16px;color:var(--primary-dark);}
+  .kpi{font-size:28px;font-weight:bold;margin-bottom:8px;color:var(--primary);}
+  .muted{font-size:13px;color:var(--muted);margin-bottom:10px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{text-align:left;padding:6px 0;border-bottom:1px solid var(--line);}
+  th{color:var(--primary-dark);font-weight:bold;}
+
+  /* Action Buttons */
+  .btn{
+    display:inline-block;
+    margin-top:8px;
+    padding:6px 12px;
+    border:none;
+    border-radius:6px;
+    background:var(--primary);
+    color:#fff;
+    font-size:13px;
+    cursor:pointer;
+    transition:0.2s;
   }
-  .kpi{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:8px;
+  .btn:hover{background:var(--primary-dark);}
+  .btn-outline{
+    background:#fff;
     color:var(--primary);
+    border:1px solid var(--primary);
   }
-  .muted{
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:10px;
-  }
-  table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-  }
-  th,td{
-    text-align:left;
-    padding:6px 0;
-    border-bottom:1px solid var(--line);
-  }
-  th{
-    color:var(--primary-dark);
-    font-weight:bold;
-  }
+  .btn-outline:hover{background:var(--primary);color:#fff;}
 </style>
 </head>
 <body>
 <div class="app">
-  <!-- Sidebar Navigation -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">CHAKANOKS</div>
     <nav class="nav">
@@ -164,7 +153,7 @@
     <div class="logout">Logout</div>
   </aside>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="main">
     <div class="topbar">
       <div><strong>Branch Manager</strong></div>
@@ -179,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav a");
   const cardsContainer = document.querySelector(".cards");
 
-  // Define each card
+  // Cards with ACTIONS
   const cardInventory = `
     <div class="card">
       <h3>Current Inventory</h3>
@@ -191,6 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>Snacks</td><td>3,890</td></tr>
         <tr><td>Personal Care</td><td>1,620</td></tr>
       </table>
+      <button class="btn">+ Add Item</button>
+      <button class="btn-outline">View All</button>
     </div>
   `;
 
@@ -205,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>Rice 5kg</td><td>9</td></tr>
         <tr><td>Soap Bar</td><td>15</td></tr>
       </table>
+      <button class="btn">Reorder</button>
     </div>
   `;
 
@@ -219,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>PR-00139</td><td>Approval</td></tr>
         <tr><td>PR-00140</td><td>Draft</td></tr>
       </table>
+      <button class="btn">+ New Request</button>
     </div>
   `;
 
@@ -232,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>TX-0192</td><td>Incoming</td></tr>
         <tr><td>TX-0193</td><td>Await Pickup</td></tr>
       </table>
+      <button class="btn">+ New Transfer</button>
     </div>
   `;
 
@@ -245,6 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>PR</td><td>PR-00139</td></tr>
         <tr><td>Transfer</td><td>TX-0193</td></tr>
       </table>
+      <button class="btn-outline">Review All</button>
     </div>
   `;
 
@@ -259,10 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <tr><td>Inventory Aging</td><td>This Week</td></tr>
         <tr><td>Stock Movement</td><td>This Month</td></tr>
       </table>
+      <button class="btn">Generate Report</button>
     </div>
   `;
 
-  // Define sections
+  // Sections
   const sections = {
     Dashboard: cardInventory + cardLowStock + cardPurchase + cardTransfers + cardApprovals + cardReports,
     Inventory: cardInventory + cardLowStock,
@@ -271,10 +267,10 @@ document.addEventListener("DOMContentLoaded", () => {
     Reports: cardReports
   };
 
-  // Default load
+  // Default
   cardsContainer.innerHTML = sections.Dashboard;
 
-  // Handle nav clicks
+  // Nav Clicks
   navLinks.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
