@@ -1,0 +1,5 @@
+# Allow access to static files
+<Files "*">
+    Order allow,deny
+    Allow from all
+</Files>

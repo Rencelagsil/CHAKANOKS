@@ -8,6 +8,6 @@ class Logistics extends Controller
 {
     public function index()
     {
-        return view('logistics');
+        return view('logistics/dashboard');
     }
 }

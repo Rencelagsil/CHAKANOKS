@@ -231,10 +231,16 @@
       <p>Please sign in to access your dashboard.</p>
     </div>
 
-    <form class="login-form" id="loginForm">
+    <form class="login-form" action="<?= base_url('login/auth') ?>" method="post" id="loginForm">
+      <?php if (session()->getFlashdata('error')): ?>
+        <div class="error-message" style="display: block;">
+          <?= session()->getFlashdata('error') ?>
+        </div>
+      <?php endif; ?>
+
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
       </div>
 
       <div class="form-group">
@@ -270,7 +276,7 @@
 
   <script>
     const loginForm = document.getElementById('loginForm');
-    const emailInput = document.getElementById('email');
+    const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
     const loginBtn = document.getElementById('loginBtn');
     const loginBtnText = document.getElementById('loginBtnText');
@@ -294,13 +300,11 @@
     }
 
     loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const email = emailInput.value.trim();
+      const username = usernameInput.value.trim();
       const password = passwordInput.value.trim();
-      const remember = document.getElementById('remember').checked;
 
-      if (!email || !password) {
+      if (!username || !password) {
+        e.preventDefault();
         showMessage(errorMessage, 'Please fill in all fields.', true);
         return;
       }
@@ -308,55 +312,15 @@
       loginBtn.disabled = true;
       loginBtnText.style.display = 'none';
       loginBtnLoading.style.display = 'inline';
-
-      setTimeout(() => {
-        const userSession = {
-          email: email,
-          loginTime: new Date().toISOString(),
-          remember: remember
-        };
-        localStorage.setItem('chakanoks_user_session', JSON.stringify(userSession));
-        
-        showMessage(successMessage, 'Login successful! Redirecting to dashboard...');
-        
-        setTimeout(() => {
-          window.location.href = 'index.html'; 
-        }, 2000);
-      }, 1500);
     });
 
-    function checkExistingSession() {
-      const session = localStorage.getItem('chakanoks_user_session');
-      if (session) {
-        try {
-          const userSession = JSON.parse(session);
-          const loginTime = new Date(userSession.loginTime);
-          const now = new Date();
-          const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-          
-          const maxHours = userSession.remember ? 24 * 30 : 8;
-          if (hoursDiff < maxHours) {
-            showMessage(successMessage, 'Welcome back! Redirecting...');
-            setTimeout(() => {
-              window.location.href = 'index.html';
-            }, 2000);
-          } else {
-            localStorage.removeItem('chakanoks_user_session');
-          }
-        } catch (e) {
-          localStorage.removeItem('chakanoks_user_session');
-        }
-      }
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
-      checkExistingSession();
-      emailInput.focus();
+      usernameInput.focus();
     });
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' && document.activeElement === passwordInput) {
-        loginForm.dispatchEvent(new Event('submit'));
+        loginForm.submit();
       }
     });
 
