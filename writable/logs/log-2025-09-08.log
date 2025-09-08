@@ -1,0 +1,522 @@
+ERROR - 2025-09-08 15:19:43 --> mysqli_sql_exception: Table 'chakanoks_scms.users' doesn't exist in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+#8 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Login->auth()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-09-08 15:19:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'chakanoks_scms.users' doesn't exist
+[Method: POST, Route: login/auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 15:19:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'chakanoks_scms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 15:19:43 --> [Caused by] mysqli_sql_exception: Table 'chakanoks_scms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-08 15:19:57 --> mysqli_sql_exception: Table 'chakanoks_scms.users' doesn't exist in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+#8 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Login->auth()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-09-08 15:19:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'chakanoks_scms.users' doesn't exist
+[Method: POST, Route: login/auth]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 15:19:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'chakanoks_scms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 15:19:57 --> [Caused by] mysqli_sql_exception: Table 'chakanoks_scms.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `username` = \'maria\'
+AND `is_active` = 1
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `is_active` = :is_active:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\UserModel.php(61): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\Login.php(42): App\Models\UserModel->authenticate('maria', 'maria123')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->auth()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-08 16:08:43 --> mysqli_sql_exception: Duplicate key name 'product_code' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `s...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `s...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `s...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `s...')
+#4 C:\xampp\htdocs\CHAKANOKS\app\Database\Migrations\2024-01-01-000012_CreateStockLevelsTable.php(99): CodeIgniter\Database\Forge->createTable('stock_levels')
+#5 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateStockLevelsTable->up()
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+CRITICAL - 2025-09-08 16:10:09 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: migrate:refresh]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\Commands\Database\MigrateRefresh.php(78): CodeIgniter\CLI\CLI::prompt('Are you sure you want to refresh?', [...])
+ 3 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run([...])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', [])
+ 5 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-09-08 16:10:22 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: migrate:refresh]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\Commands\Database\MigrateRefresh.php(78): CodeIgniter\CLI\CLI::prompt('Are you sure you want to refresh?', [...])
+ 3 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run([...])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', [...])
+ 5 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-09-08 16:10:40 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: migrate:refresh]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\CLI\CLI.php(265): CodeIgniter\CLI\CLI::prompt('Are you sure you want to refresh?', [...], [...])
+ 3 SYSTEMPATH\Commands\Database\MigrateRefresh.php(78): CodeIgniter\CLI\CLI::prompt('Are you sure you want to refresh?', [...])
+ 4 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run([...])
+ 5 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', [])
+ 6 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-09-08 16:11:08 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: migrate:rollback]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\Commands\Database\MigrateRollback.php(76): CodeIgniter\CLI\CLI::prompt('Are you sure you want to rollback?', [...])
+ 3 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run([])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:rollback', [])
+ 5 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-09-08 16:11:21 --> mysqli_sql_exception: Duplicate key name 'product_code' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `s...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `s...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `s...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `s...')
+#4 C:\xampp\htdocs\CHAKANOKS\app\Database\Migrations\2024-01-01-000012_CreateStockLevelsTable.php(99): CodeIgniter\Database\Forge->createTable('stock_levels')
+#5 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateStockLevelsTable->up()
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-09-08 16:12:03 --> mysqli_sql_exception: Duplicate key name 'report_id' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `d...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `d...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `d...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `d...')
+#4 C:\xampp\htdocs\CHAKANOKS\app\Database\Migrations\2024-01-01-000013_CreateDamageReportsTable.php(103): CodeIgniter\Database\Forge->createTable('damage_reports')
+#5 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateDamageReportsTable->up()
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-09-08 16:12:51 --> mysqli_sql_exception: Duplicate key name 'damage_report_id' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `d...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `d...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `d...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `d...')
+#4 C:\xampp\htdocs\CHAKANOKS\app\Database\Migrations\2024-01-01-000013_CreateDamageReportsTable.php(103): CodeIgniter\Database\Forge->createTable('damage_reports')
+#5 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateDamageReportsTable->up()
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-09-08 16:15:18 --> mysqli_sql_exception: Duplicate key name 'damage_report_id' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `d...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `d...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `d...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `d...')
+#4 C:\xampp\htdocs\CHAKANOKS\app\Database\Migrations\2024-01-01-000013_CreateDamageReportsTable.php(103): CodeIgniter\Database\Forge->createTable('damage_reports')
+#5 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateDamageReportsTable->up()
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-08 16:15:54 --> TypeError: CodeIgniter\CLI\InputOutput::input(): Return value must be of type string, bool returned
+[Method: CLI, Route: migrate:rollback]
+in SYSTEMPATH\CLI\InputOutput.php on line 46.
+ 1 SYSTEMPATH\CLI\CLI.php(260): CodeIgniter\CLI\InputOutput->input()
+ 2 SYSTEMPATH\Commands\Database\MigrateRollback.php(76): CodeIgniter\CLI\CLI::prompt('Are you sure you want to rollback?', [...])
+ 3 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run([...])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:rollback', [...])
+ 5 SYSTEMPATH\Boot.php(388): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-09-08 16:34:27 --> mysqli_sql_exception: Duplicate entry 'CHK-001' for key 'product_code' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', NULL, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\CHAKANOKS\app\Database\Seeds\ProductSeeder.php(156): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\Seeder.php(149): App\Database\Seeds\ProductSeeder->run()
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-08 18:12:28 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:12:40 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-08 18:13:09 --> mysqli_sql_exception: Duplicate entry 'admin' for key 'username' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', NULL, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+#5 C:\xampp\htdocs\CHAKANOKS\app\Database\Seeds\UserSeeder.php(92): CodeIgniter\Database\BaseBuilder->insertBatch(Array)
+#6 C:\xampp\htdocs\CHAKANOKS\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#7 C:\xampp\htdocs\CHAKANOKS\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\CHAKANOKS\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\CHAKANOKS\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\CHAKANOKS\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-08 18:13:36 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:13:42 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:14:00 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:15:02 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:15:41 --> ErrorException: Attempt to read property "product_name" on array
+[Method: GET, Route: staff]
+in APPPATH\Views\inventory\dashboard.php on line 144.
+ 1 APPPATH\Views\inventory\dashboard.php(144): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "product_name" on array', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php', 144)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\inventory\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('inventory/dashboard', [], true)
+ 5 APPPATH\Controllers\Staff.php(54): view('inventory/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Staff->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Staff))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:26:06 --> ErrorException: Undefined variable $categories
+[Method: GET, Route: branchmanager/inventory]
+in APPPATH\Views\branchmanager\inventory.php on line 29.
+ 1 APPPATH\Views\branchmanager\inventory.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categories', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\inventory.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\inventory.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('branchmanager/inventory', [], true)
+ 5 APPPATH\Controllers\BranchManager.php(67): view('branchmanager/inventory')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BranchManager->inventory()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BranchManager))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:26:40 --> ErrorException: Undefined variable $categories
+[Method: GET, Route: branchmanager/reports]
+in APPPATH\Views\branchmanager\reports.php on line 33.
+ 1 APPPATH\Views\branchmanager\reports.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categories', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\reports.php', 33)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\reports.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('branchmanager/reports', [], true)
+ 5 APPPATH\Controllers\BranchManager.php(82): view('branchmanager/reports')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BranchManager->reports()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BranchManager))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:27:31 --> ErrorException: Undefined variable $categories
+[Method: GET, Route: branchmanager/inventory]
+in APPPATH\Views\branchmanager\inventory.php on line 29.
+ 1 APPPATH\Views\branchmanager\inventory.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categories', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\inventory.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\inventory.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('branchmanager/inventory', [], true)
+ 5 APPPATH\Controllers\BranchManager.php(67): view('branchmanager/inventory')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BranchManager->inventory()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BranchManager))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:28:32 --> ErrorException: Undefined variable $pendingTransfers
+[Method: GET, Route: branchmanager/transfers]
+in APPPATH\Views\branchmanager\transfers.php on line 38.
+ 1 APPPATH\Views\branchmanager\transfers.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pendingTransfers', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\transfers.php', 38)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\transfers.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('branchmanager/transfers', [], true)
+ 5 APPPATH\Controllers\BranchManager.php(77): view('branchmanager/transfers')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BranchManager->transfers()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BranchManager))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-08 18:28:41 --> ErrorException: Undefined variable $pendingTransfers
+[Method: GET, Route: branchmanager/transfers]
+in APPPATH\Views\branchmanager\transfers.php on line 38.
+ 1 APPPATH\Views\branchmanager\transfers.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pendingTransfers', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\transfers.php', 38)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\branchmanager\\transfers.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('branchmanager/transfers', [], true)
+ 5 APPPATH\Controllers\BranchManager.php(77): view('branchmanager/transfers')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BranchManager->transfers()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BranchManager))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

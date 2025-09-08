@@ -28,37 +28,6 @@
       </div>
     </div>
 
-    <div class="row g-4 mb-4">
-      <div class="col-md-3">
-        <div class="stat-card">
-          <div class="stat-number"><?= count($inventory ?? []) ?></div>
-          <div class="stat-label">Total Products</div>
-          <div class="stat-change text-success">+3 this week</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-card">
-          <div class="stat-number"><?= count($lowStockItems ?? []) ?></div>
-          <div class="stat-label">Low Stock Items</div>
-          <div class="stat-change text-warning">+1 from yesterday</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-card">
-          <div class="stat-number"><?= count($criticalStockItems ?? []) ?></div>
-          <div class="stat-label">Critical Stock</div>
-          <div class="stat-change text-danger">Requires attention</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-card">
-          <div class="stat-number"><?= count($recentMovements ?? []) ?></div>
-          <div class="stat-label">Recent Movements</div>
-          <div class="stat-change text-info">Today's activity</div>
-        </div>
-      </div>
-    </div>
-
     <div class="custom-card mb-4">
       <h3 class="text-warning mb-3 fs-5">⚠️ Stock Alerts</h3>
       <?php if (!empty($criticalStockItems)): ?>

@@ -31,6 +31,30 @@ $routes->group('staff', ['filter' => 'auth'], static function($routes) {
     $routes->get('reports', 'Staff::reports');
 });
 
+// Inventory routes (temporarily removed auth filter for testing)
+$routes->group('inventory', static function($routes) {
+    // View routes
+    $routes->get('dashboard', 'Inventory::dashboard');
+    $routes->get('stock-levels', 'Inventory::stockLevels');
+    $routes->get('reports', 'Inventory::reports');
+    $routes->get('deliveries', 'Inventory::deliveries');
+    $routes->get('damages-expired', 'Inventory::damagesExpired');
+    
+    // API routes
+    $routes->get('api/test', 'Inventory::testApi');
+    $routes->get('api/stock-data', 'Inventory::getStockData');
+    $routes->post('api/save-stock', 'Inventory::saveStock');
+    $routes->post('api/adjust-stock', 'Inventory::adjustStock');
+    $routes->delete('api/delete-stock/(:num)', 'Inventory::deleteStock/$1');
+    $routes->get('api/recent-reports', 'Inventory::getRecentReports');
+    $routes->post('api/generate-report', 'Inventory::generateReport');
+    $routes->post('api/report-damage', 'Inventory::reportDamage');
+    $routes->post('api/receive-delivery', 'Inventory::receiveDelivery');
+    $routes->get('api/delivery-items/(:num)', 'Inventory::getDeliveryItems/$1');
+    $routes->get('api/delivery-items', 'Inventory::getAllDeliveries');
+    $routes->get('api/damage-items', 'Inventory::getDamageItems');
+});
+
 // Branch Manager subpages
 $routes->group('branchmanager', ['filter' => 'auth'], static function($routes) {
     $routes->get('inventory', 'BranchManager::inventory');

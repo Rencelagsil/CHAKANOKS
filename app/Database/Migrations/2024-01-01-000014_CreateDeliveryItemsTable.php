@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateStockMovementsTable extends Migration
+class CreateDeliveryItemsTable extends Migration
 {
     public function up()
     {
@@ -15,43 +15,46 @@ class CreateStockMovementsTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'delivery_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
             'product_id' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
             ],
-            'branch_id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'movement_type' => [
-                'type' => 'ENUM',
-                'constraint' => ['in', 'out', 'adjustment', 'transfer_in', 'transfer_out'],
-            ],
-            'quantity' => [
+            'expected_quantity' => [
                 'type' => 'DECIMAL',
                 'constraint' => '10,2',
             ],
-            'reference_type' => [
+            'received_quantity' => [
+                'type' => 'DECIMAL',
+                'constraint' => '10,2',
+                'default' => 0,
+            ],
+            'unit_cost' => [
+                'type' => 'DECIMAL',
+                'constraint' => '10,2',
+            ],
+            'condition_status' => [
                 'type' => 'ENUM',
-                'constraint' => ['purchase_order', 'transfer', 'adjustment', 'delivery'],
+                'constraint' => ['good', 'damaged', 'expired', 'defective'],
+                'default' => 'good',
+            ],
+            'batch_number' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
                 'null' => true,
             ],
-            'reference_id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+            'expiry_date' => [
+                'type' => 'DATE',
                 'null' => true,
             ],
             'notes' => [
                 'type' => 'TEXT',
                 'null' => true,
-            ],
-            'created_by' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -64,14 +67,14 @@ class CreateStockMovementsTable extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addKey(['product_id', 'branch_id']);
-        $this->forge->addKey('created_by');
-        $this->forge->createTable('stock_movements');
+        $this->forge->addKey('delivery_id');
+        $this->forge->addKey('product_id');
+        $this->forge->addKey(['delivery_id', 'product_id']);
+        $this->forge->createTable('delivery_items');
     }
 
     public function down()
     {
-        $this->forge->dropTable('stock_movements');
+        $this->forge->dropTable('delivery_items');
     }
 }
-
