@@ -1,0 +1,250 @@
+CRITICAL - 2025-09-10 01:52:12 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:12 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:17 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:17 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:19 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:19 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:22 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:22 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:34 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:52:34 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:53:47 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: POST, Route: inventory/api/save-stock]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:25 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:25 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:30 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:30 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:32 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:57:32 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:58:36 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:58:36 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:58:58 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 01:58:58 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 02:04:49 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 02:04:49 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 02:04:51 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/test]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-10 02:04:51 --> Error: Class "Picqer\Barcode\BarcodeGeneratorPNG" not found
+[Method: GET, Route: inventory/api/stock-data]
+in APPPATH\Services\BarcodeService.php on line 14.
+ 1 APPPATH\Controllers\Inventory.php(32): App\Services\BarcodeService->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Inventory->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

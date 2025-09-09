@@ -14,7 +14,7 @@ class ProductModel extends Model
     protected $protectFields = true;
     protected $allowedFields = [
         'product_code', 'product_name', 'description', 'category', 'unit', 
-        'unit_price', 'supplier_id', 'barcode', 'is_perishable', 
+        'unit_price', 'stock', 'supplier_id', 'barcode', 'barcode_path', 'is_perishable', 
         'shelf_life_days', 'is_active'
     ];
 
