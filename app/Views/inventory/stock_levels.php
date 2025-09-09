@@ -4,6 +4,7 @@
   <button class="btn btn-primary d-md-none position-fixed top-0 start-0 m-3" style="z-index:1100" data-bs-toggle="offcanvas" data-bs-target="#sidebar"><i class="bi bi-list"></i></button>
   <div id="mobileOverlay" class="d-md-none" onclick="closeSidebar()"></div>
 
+}
   <?= $this->include('shared/sidebar') ?>
 
   <main class="main-content">
@@ -104,7 +105,6 @@
               <th>Unit Price</th>
               <th>Total Value</th>
               <th>Status</th>
-              <th>Last Updated</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -394,9 +394,9 @@ function loadStockData() {
   
   console.log('Loading stock data, total items:', stockData.length); // Debug log
   
-  if (!stockData || stockData.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="9" class="text-center">No products found</td></tr>';
-    return;
+    if (!stockData || stockData.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="10" class="text-center">No products found</td></tr>';
+      return;
   }
   
   const filteredData = getFilteredData();
@@ -406,35 +406,31 @@ function loadStockData() {
   
   console.log('Filtered data:', filteredData.length, 'Page data:', pageData.length); // Debug log
   
-  pageData.forEach(stock => {
-    const statusClass = getStockStatusClass(stock.current_stock, stock.min_stock_level, stock.max_stock_level);
-    const status = getStockStatus(stock.current_stock, stock.min_stock_level, stock.max_stock_level);
-    
-    const row = `
-      <tr>
-        <td><strong>${stock.product_code}</strong></td>
-        <td>${stock.product_name}</td>
-        <td>${stock.category}</td>
-        <td>${stock.current_stock || 0}</td>
-        <td>${stock.min_stock_level || 0}</td>
-        <td>${stock.max_stock_level || 0}</td>
-        <td><span class="badge ${statusClass}">${status}</span></td>
-        <td>₱${parseFloat(stock.unit_price || 0).toLocaleString()}</td>
-        <td>
-          <button class="btn btn-sm btn-outline-primary me-1" onclick="editStock(${stock.id})" title="Edit">
-            <i class="bi bi-pencil"></i>
-          </button>
-          <button class="btn btn-sm btn-outline-warning me-1" onclick="adjustStock(${stock.id})" title="Adjust">
-            <i class="bi bi-plus-minus"></i>
-          </button>
-          <button class="btn btn-sm btn-outline-danger" onclick="deleteStock(${stock.id})" title="Delete">
-            <i class="bi bi-trash"></i>
-          </button>
-        </td>
-      </tr>
-    `;
-    tbody.innerHTML += row;
-  });
+    pageData.forEach(stock => {
+      const statusClass = getStockStatusClass(stock.current_stock, stock.min_stock_level, stock.max_stock_level);
+      const status = getStockStatus(stock.current_stock, stock.min_stock_level, stock.max_stock_level);
+      const inventoryId = stock.inventory_id || stock.id;
+      // Calculate total value
+      const totalValue = (parseFloat(stock.current_stock || 0) * parseFloat(stock.unit_price || 0)).toLocaleString();
+      const row = `
+        <tr>
+          <td><strong>${stock.product_code || ''}</strong></td>
+          <td>${stock.product_name || ''}</td>
+          <td>${stock.category || ''}</td>
+          <td>${stock.current_stock != null ? stock.current_stock : 0}</td>
+          <td>${stock.min_stock_level != null ? stock.min_stock_level : 0}</td>
+          <td>${stock.max_stock_level != null ? stock.max_stock_level : 0}</td>
+          <td>₱${parseFloat(stock.unit_price || 0).toLocaleString()}</td>
+          <td>₱${totalValue}</td>
+          <td><span class="badge ${statusClass}">${status}</span></td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-1" onclick="editStock(${inventoryId})">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" onclick="deleteStock(${inventoryId})">Delete</button>
+          </td>
+        </tr>
+      `;
+      tbody.innerHTML += row;
+    });
   
   updatePagination(filteredData.length);
 }
@@ -532,10 +528,8 @@ function changePage(page) {
 }
 
 function editStock(id) {
-  const stock = stockData.find(s => s.id === id);
+  const stock = stockData.find(s => s.inventory_id == id || s.id == id);
   if (!stock) return;
-  
-  // Populate form
   document.getElementById('stockId').value = stock.inventory_id || '';
   document.getElementById('productId').value = stock.id;
   document.getElementById('productCode').value = stock.product_code;
@@ -546,8 +540,7 @@ function editStock(id) {
   document.getElementById('minLevel').value = stock.min_stock_level || 0;
   document.getElementById('maxLevel').value = stock.max_stock_level || 0;
   document.getElementById('description').value = stock.description || '';
-  
-  document.getElementById('addStockModalLabel').textContent = 'Edit Stock Item';
+  document.getElementById('stockModalTitle').textContent = 'Edit Stock Item';
   new bootstrap.Modal(document.getElementById('addStockModal')).show();
 }
 
@@ -669,21 +662,17 @@ async function saveAdjustment() {
 async function deleteStock(id) {
   if (confirm('Are you sure you want to delete this product?')) {
     console.log('Deleting stock with ID:', id);
-    
     try {
-      const deleteUrl = window.apiBaseUrl ? `${window.apiBaseUrl}/api/delete-stock/${id}` : `/CHAKANOKS/inventory/api/delete-stock/${id}`;
-      
+      const deleteUrl = window.apiBaseUrl ? `${window.apiBaseUrl}/api/delete-stock/${id}` : '/CHAKANOKS/inventory/api/delete-stock/' + id;
       const response = await fetch(deleteUrl, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         }
       });
-      
       console.log('Delete response status:', response.status);
       const result = await response.json();
       console.log('Delete response:', result);
-      
       if (result.success) {
         await fetchStockData(); // Reload data
         showAlert('Stock item deleted successfully!', 'success');
@@ -784,5 +773,6 @@ document.getElementById('addStockModal').addEventListener('hidden.bs.modal', fun
 </script>
 
 <?= $this->include('shared/footer') ?>
+
 
 
