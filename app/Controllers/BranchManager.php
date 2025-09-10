@@ -82,6 +82,86 @@ class BranchManager extends Controller
         return view('branchmanager/reports');
     }
 
+    // API: Inventory data for branch manager inventory view
+    public function apiInventoryData()
+    {
+        $branchId = session()->get('branch_id');
+        if (!$branchId) {
+            // Fallback to first active branch (useful for local testing)
+            $fallback = $this->branchModel->where('is_active', 1)->orderBy('id', 'ASC')->first();
+            if ($fallback) {
+                $branchId = $fallback['id'];
+            }
+        }
+        if (!$branchId) {
+            return $this->response->setJSON(['success' => false, 'error' => 'No branch available'])->setStatusCode(401);
+        }
+
+        $items = $this->inventoryModel
+            ->select('products.id as id, inventory.id as inventory_id, products.product_code, products.product_name, products.category, products.unit_price, inventory.current_stock, inventory.min_stock_level, inventory.max_stock_level, inventory.reorder_point, inventory.last_updated')
+            ->join('products', 'products.id = inventory.product_id')
+            ->where('inventory.branch_id', $branchId)
+            ->where('products.is_active', 1)
+            ->orderBy('products.product_name', 'ASC')
+            ->findAll();
+
+        return $this->response->setJSON(['success' => true, 'data' => $items]);
+    }
+
+    // API: Critical stock alerts
+    public function apiCriticalAlerts()
+    {
+        $branchId = session()->get('branch_id');
+        if (!$branchId) {
+            $fallback = $this->branchModel->where('is_active', 1)->orderBy('id', 'ASC')->first();
+            if ($fallback) {
+                $branchId = $fallback['id'];
+            }
+        }
+        if (!$branchId) {
+            return $this->response->setJSON(['success' => false, 'error' => 'No branch available'])->setStatusCode(401);
+        }
+
+        $alerts = $this->inventoryModel
+            ->select('products.product_name, inventory.current_stock, inventory.min_stock_level')
+            ->join('products', 'products.id = inventory.product_id')
+            ->where('inventory.branch_id', $branchId)
+            ->where('products.is_active', 1)
+            ->where('inventory.current_stock <= inventory.min_stock_level')
+            ->orderBy('products.product_name', 'ASC')
+            ->findAll();
+
+        return $this->response->setJSON(['success' => true, 'data' => $alerts]);
+    }
+
+    // API: Adjust stock for quick adjustment in inventory view
+    public function apiAdjustStock()
+    {
+        $branchId = session()->get('branch_id');
+        if (!$branchId) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Branch not assigned'])->setStatusCode(401);
+        }
+
+        $payload = $this->request->getJSON(true) ?? $this->request->getPost();
+
+        $productId = isset($payload['product_id']) ? (int) $payload['product_id'] : 0;
+        $type = $payload['type'] ?? '';
+        $quantity = isset($payload['quantity']) ? (int) $payload['quantity'] : 0;
+
+        if ($productId <= 0 || $quantity <= 0 || !in_array($type, ['add', 'remove', 'set'], true)) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Invalid input'])->setStatusCode(400);
+        }
+
+        $movementType = $type === 'add' ? 'in' : ($type === 'remove' ? 'out' : 'adjustment');
+
+        $ok = $this->inventoryModel->updateStock($productId, $branchId, $quantity, $movementType);
+        if (!$ok) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Failed to update stock'])->setStatusCode(422);
+        }
+
+        return $this->response->setJSON(['success' => true]);
+    }
+
     public function createPurchaseOrder()
     {
         $branchId = session()->get('branch_id');

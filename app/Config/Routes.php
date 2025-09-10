@@ -61,4 +61,9 @@ $routes->group('branchmanager', ['filter' => 'auth'], static function($routes) {
     $routes->get('purchase-requests', 'BranchManager::purchaseRequests');
     $routes->get('transfers', 'BranchManager::transfers');
     $routes->get('reports', 'BranchManager::reports');
+
+    // API routes for branch manager
+    $routes->get('api/inventory-data', 'BranchManager::apiInventoryData');
+    $routes->get('api/critical-alerts', 'BranchManager::apiCriticalAlerts');
+    $routes->post('api/adjust-stock', 'BranchManager::apiAdjustStock');
 });
