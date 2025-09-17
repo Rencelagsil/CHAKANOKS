@@ -257,7 +257,7 @@
   </div>
 </div>
 
-<!-- Barcode Scanner Modal -->
+<!-- Update the Barcode Scanner Modal -->
 <div class="modal fade" id="barcodeModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content bg-dark text-white">
@@ -265,24 +265,40 @@
         <h5 class="modal-title text-warning">Barcode Scanner</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body text-center">
-        <div id="barcodeReader" style="width: 100%; height: 300px; background: #333; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-          <div class="text-warning">
+      <div class="modal-body">
+        <!-- Camera viewport -->
+        <div id="barcodeReader" class="mb-3" style="width: 100%; height: 300px; background: #000; border-radius: 10px; overflow: hidden;">
+          <div class="text-warning text-center p-3">
             <i class="bi bi-camera-video fs-1"></i>
-            <p class="mt-2">Camera will appear here</p>
-            <p class="small">Point camera at barcode to scan</p>
+            <p class="mt-2">Initializing camera...</p>
           </div>
         </div>
+        
+        <!-- Manual entry -->
         <div class="mt-3">
-          <input type="text" class="form-control bg-dark text-white border-warning" 
-                 id="manualBarcode" placeholder="Or enter barcode manually">
-          <button class="btn btn-primary mt-2" onclick="searchByBarcode()">Search Product</button>
+          <div class="input-group">
+            <span class="input-group-text bg-dark text-warning border-warning">
+              <i class="bi bi-upc"></i>
+            </span>
+            <input type="text" class="form-control bg-dark text-white border-warning" 
+                   id="manualBarcode" placeholder="Enter barcode manually">
+            <button class="btn btn-primary" onclick="searchByBarcode()">
+              <i class="bi bi-search"></i> Search
+            </button>
+          </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="mt-3 text-center small text-muted">
+          <p>Point camera at barcode to scan automatically</p>
+          <p>Supports EAN-13, EAN-8, Code 128, Code 39, and UPC formats</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
 <script>
 // Stock data will be loaded from database
 let stockData = [];
@@ -687,18 +703,90 @@ async function deleteStock(id) {
   }
 }
 
-function searchByBarcode() {
+function initBarcodeScanner() {
+  Quagga.init({
+    inputStream: {
+      name: "Live",
+      type: "LiveStream",
+      target: document.querySelector("#barcodeReader"),
+      constraints: {
+        facingMode: "environment" // Use back camera if available
+      },
+    },
+    decoder: {
+      readers: [
+        "ean_reader",
+        "ean_8_reader",
+        "code_128_reader",
+        "code_39_reader",
+        "upc_reader"
+      ]
+    }
+  }, function(err) {
+    if (err) {
+      console.error("Error initializing Quagga:", err);
+      showAlert("Error accessing camera: " + err.message, "danger");
+      return;
+    }
+    console.log("QuaggaJS initialization succeeded");
+    Quagga.start();
+  });
+
+  // Handle successful scans
+  Quagga.onDetected(function(result) {
+    if (result.codeResult.code) {
+      // Play a beep sound
+      const beep = new Audio("data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU");
+      beep.play();
+
+      // Show the scanned barcode
+      document.getElementById('manualBarcode').value = result.codeResult.code;
+      
+      // Stop scanning
+      Quagga.stop();
+      
+      // Search for the product
+      searchByBarcode();
+    }
+  });
+}
+
+// Modify the existing barcode modal event handlers
+document.getElementById('barcodeModal').addEventListener('shown.bs.modal', function() {
+  initBarcodeScanner();
+});
+
+document.getElementById('barcodeModal').addEventListener('hidden.bs.modal', function() {
+  Quagga.stop();
+});
+
+// Update the searchByBarcode function
+async function searchByBarcode() {
   const barcode = document.getElementById('manualBarcode').value;
   if (!barcode) return;
   
-  // In real app, search database by barcode
-  const item = stockData.find(s => s.product_code === barcode);
-  
-  if (item) {
-    bootstrap.Modal.getInstance(document.getElementById('barcodeModal')).hide();
-    editStock(item.id);
-  } else {
-    showAlert('Product not found with barcode: ' + barcode, 'warning');
+  try {
+    const searchUrl = window.apiBaseUrl ? 
+      `${window.apiBaseUrl}/api/search-barcode/${barcode}` : 
+      `/CHAKANOKS/inventory/api/search-barcode/${barcode}`;
+    
+    const response = await fetch(searchUrl);
+    const result = await response.json();
+    
+    if (result.success && result.data) {
+      bootstrap.Modal.getInstance(document.getElementById('barcodeModal')).hide();
+      editStock(result.data.id);
+    } else {
+      // If product not found, show option to add new product
+      if (confirm('Product not found. Would you like to add a new product with this barcode?')) {
+        bootstrap.Modal.getInstance(document.getElementById('barcodeModal')).hide();
+        document.getElementById('productCode').value = barcode;
+        new bootstrap.Modal(document.getElementById('addStockModal')).show();
+      }
+    }
+  } catch (error) {
+    console.error('Error searching barcode:', error);
+    showAlert('Error searching barcode: ' + error.message, 'danger');
   }
 }
 
@@ -771,6 +859,10 @@ document.getElementById('addStockModal').addEventListener('hidden.bs.modal', fun
   document.getElementById('stockId').value = '';
 });
 </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 
 <?= $this->include('shared/footer') ?>
 

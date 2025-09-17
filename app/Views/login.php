@@ -222,8 +222,6 @@
 <body>
   <div class="login-container">
     <div class="header">
-      <h1>ChakaNoks</h1>
-      <p>Supply Chain Management System</p>
     </div>
 
     <div class="welcome-section">
