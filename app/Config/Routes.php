@@ -31,8 +31,8 @@ $routes->group('staff', ['filter' => 'auth'], static function($routes) {
     $routes->get('reports', 'Staff::reports');
 });
 
-// Inventory routes (temporarily removed auth filter for testing)
-$routes->group('inventory', static function($routes) {
+// Inventory routes (protected)
+$routes->group('inventory', ['filter' => 'auth'], static function($routes) {
     // View routes
     $routes->get('dashboard', 'Inventory::dashboard');
     $routes->get('stock-levels', 'Inventory::stockLevels');
@@ -55,6 +55,13 @@ $routes->group('inventory', static function($routes) {
     $routes->get('api/damage-items', 'Inventory::getDamageItems');
 });
 
+// Logistics API
+$routes->group('logistics', ['filter' => 'auth'], static function($routes) {
+    $routes->get('api/deliveries', 'Logistics::listDeliveries');
+    $routes->post('api/deliveries/schedule', 'Logistics::scheduleDelivery');
+    $routes->post('api/deliveries/(:num)/status', 'Logistics::updateDeliveryStatus/$1');
+});
+
 // Branch Manager subpages
 $routes->group('branchmanager', ['filter' => 'auth'], static function($routes) {
     $routes->get('inventory', 'BranchManager::inventory');
@@ -66,4 +73,16 @@ $routes->group('branchmanager', ['filter' => 'auth'], static function($routes) {
     $routes->get('api/inventory-data', 'BranchManager::apiInventoryData');
     $routes->get('api/critical-alerts', 'BranchManager::apiCriticalAlerts');
     $routes->post('api/adjust-stock', 'BranchManager::apiAdjustStock');
+
+    // Purchase order actions
+    $routes->post('api/purchase-orders', 'BranchManager::createPurchaseOrder');
+    $routes->post('api/purchase-orders/(:num)/approve', 'BranchManager::approvePurchaseOrder/$1');
+    $routes->post('api/purchase-orders/(:num)/reject', 'BranchManager::rejectPurchaseOrder/$1');
+
+    // Purchase requests UI data endpoints
+    $routes->get('api/purchase-requests', 'BranchManager::apiPurchaseRequests');
+    $routes->get('api/suppliers', 'BranchManager::apiSuppliers');
+    $routes->get('api/products', 'BranchManager::apiProducts');
+    $routes->post('api/create-purchase-request', 'BranchManager::apiCreatePurchaseRequest');
+    $routes->delete('api/delete-purchase-request/(:num)', 'BranchManager::apiDeletePurchaseRequest/$1');
 });

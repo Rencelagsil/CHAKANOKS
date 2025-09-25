@@ -24,7 +24,7 @@ class Login extends Controller
             return $this->redirectToDashboard();
         }
 
-        return view('login');
+        return view('auth/login');
     }
 
     public function auth()

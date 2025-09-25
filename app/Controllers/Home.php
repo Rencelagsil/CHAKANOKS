@@ -11,6 +11,6 @@ class Home extends BaseController
             return redirect()->to(base_url('dashboard'));
         }
         
-        return view('login');
+        return view('auth/login');
     }
 }

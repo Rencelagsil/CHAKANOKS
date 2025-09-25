@@ -69,7 +69,7 @@ class BranchManager extends Controller
 
     public function purchaseRequests()
     {
-        return view('branchmanager/purchase_requests');
+		return view('branchmanager/purchase_requests');
     }
 
     public function transfers()
@@ -132,6 +132,119 @@ class BranchManager extends Controller
             ->findAll();
 
         return $this->response->setJSON(['success' => true, 'data' => $alerts]);
+    }
+
+    // API: List purchase requests (POs) for this branch
+    public function apiPurchaseRequests()
+    {
+        $branchId = session()->get('branch_id');
+        if (!$branchId) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Branch not assigned'])->setStatusCode(401);
+        }
+
+        $builder = $this->purchaseOrderModel
+            ->select('purchase_orders.*, suppliers.company_name, COUNT(purchase_order_items.id) as items_count')
+            ->join('suppliers', 'suppliers.id = purchase_orders.supplier_id', 'left')
+            ->join('purchase_order_items', 'purchase_order_items.purchase_order_id = purchase_orders.id', 'left')
+            ->where('purchase_orders.branch_id', $branchId)
+            ->groupBy('purchase_orders.id')
+            ->orderBy('purchase_orders.created_at', 'DESC');
+
+        $data = $builder->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $data]);
+    }
+
+    // API: List suppliers (basic)
+    public function apiSuppliers()
+    {
+        $supplierModel = new \App\Models\SupplierModel();
+        $items = $supplierModel->orderBy('company_name', 'ASC')->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $items]);
+    }
+
+    // API: List products (basic)
+    public function apiProducts()
+    {
+        $items = $this->productModel->where('is_active', 1)->orderBy('product_name', 'ASC')->findAll();
+        return $this->response->setJSON(['success' => true, 'data' => $items]);
+    }
+
+    // API: Create purchase request (draft or pending)
+    public function apiCreatePurchaseRequest()
+    {
+        $branchId = session()->get('branch_id');
+        $requestedBy = session()->get('user_id');
+        $payload = $this->request->getJSON(true) ?? $this->request->getPost();
+
+        $supplierId = (int) ($payload['supplier_id'] ?? 0);
+        $items = $payload['items'] ?? [];
+        $notes = $payload['notes'] ?? null;
+        $status = $payload['status'] ?? 'draft';
+        $expectedDelivery = $payload['expected_delivery'] ?? null;
+
+        if (!$branchId || !$requestedBy || $supplierId <= 0 || empty($items)) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Missing required data'])->setStatusCode(400);
+        }
+
+        $poData = [
+            'po_number' => $this->purchaseOrderModel->generatePONumber(),
+            'supplier_id' => $supplierId,
+            'branch_id' => $branchId,
+            'requested_by' => $requestedBy,
+            'status' => in_array($status, ['draft','pending'], true) ? $status : 'draft',
+            'total_amount' => 0,
+            'notes' => $notes,
+            'requested_date' => date('Y-m-d H:i:s'),
+            'expected_delivery' => $expectedDelivery,
+        ];
+
+        $this->db = $this->db ?? \Config\Database::connect();
+        $this->db->transStart();
+
+        $poId = $this->purchaseOrderModel->insert($poData);
+        if (!$poId) {
+            $this->db->transRollback();
+            return $this->response->setJSON(['success' => false, 'error' => 'Failed to create PO'])->setStatusCode(500);
+        }
+
+        $poItemModel = new \App\Models\PurchaseOrderItemModel();
+        $totalAmount = 0;
+        foreach ($items as $item) {
+            $productId = (int) ($item['product_id'] ?? 0);
+            $quantity = (float) ($item['quantity'] ?? 0);
+            $unitPrice = (float) ($item['unit_price'] ?? 0);
+            if ($productId <= 0 || $quantity <= 0) { continue; }
+            $totalAmount += ($quantity * $unitPrice);
+            $poItemModel->insert([
+                'purchase_order_id' => $poId,
+                'product_id' => $productId,
+                'quantity' => $quantity,
+                'unit_price' => $unitPrice,
+            ]);
+        }
+
+        $this->purchaseOrderModel->update($poId, ['total_amount' => $totalAmount]);
+        $this->db->transComplete();
+
+        if (!$this->db->transStatus()) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Transaction failed'])->setStatusCode(500);
+        }
+
+        return $this->response->setJSON(['success' => true, 'po_id' => $poId]);
+    }
+
+    // API: Delete purchase request (only draft)
+    public function apiDeletePurchaseRequest($poId)
+    {
+        $po = $this->purchaseOrderModel->find((int) $poId);
+        if (!$po) {
+            return $this->response->setJSON(['success' => false, 'error' => 'Not found'])->setStatusCode(404);
+        }
+        if ($po['status'] !== 'draft') {
+            return $this->response->setJSON(['success' => false, 'error' => 'Only drafts can be deleted'])->setStatusCode(422);
+        }
+        $this->purchaseOrderModel->delete((int) $poId);
+        return $this->response->setJSON(['success' => true]);
     }
 
     // API: Adjust stock for quick adjustment in inventory view
