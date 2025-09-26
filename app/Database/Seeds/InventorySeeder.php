@@ -8,12 +8,41 @@ class InventorySeeder extends Seeder
 {
     public function run()
     {
-        // seed minimal inventory for branch 1
-        $data = [
-            [ 'product_id' => 1, 'branch_id' => 1, 'current_stock' => 20, 'min_stock_level' => 10, 'max_stock_level' => 100, 'reorder_point' => 12, 'last_updated' => date('Y-m-d H:i:s') ],
-            [ 'product_id' => 2, 'branch_id' => 1, 'current_stock' => 50, 'min_stock_level' => 5, 'max_stock_level' => 200, 'reorder_point' => 10, 'last_updated' => date('Y-m-d H:i:s') ],
-            [ 'product_id' => 3, 'branch_id' => 1, 'current_stock' => 8, 'min_stock_level' => 10, 'max_stock_level' => 150, 'reorder_point' => 12, 'last_updated' => date('Y-m-d H:i:s') ],
-        ];
+        // Get all products and branches
+        $products = $this->db->table('products')->get()->getResultArray();
+        $branches = $this->db->table('branches')->where('is_active', 1)->get()->getResultArray();
+        
+        if (empty($products) || empty($branches)) {
+            return; // Skip if no products or branches exist
+        }
+        
+        $data = [];
+        
+        // Create inventory for each product in each branch
+        foreach ($products as $product) {
+            foreach ($branches as $branch) {
+                // Generate random stock levels for variety
+                $currentStock = rand(5, 100);
+                $minStock = rand(5, 15);
+                $maxStock = rand(100, 200);
+                $reorderPoint = $minStock + rand(2, 5);
+                
+                // Make some items critical/low stock for testing
+                if (rand(1, 10) <= 3) { // 30% chance of low stock
+                    $currentStock = rand(1, $minStock - 1);
+                }
+                
+                $data[] = [
+                    'product_id' => $product['id'],
+                    'branch_id' => $branch['id'],
+                    'current_stock' => $currentStock,
+                    'min_stock_level' => $minStock,
+                    'max_stock_level' => $maxStock,
+                    'reorder_point' => $reorderPoint,
+                    'last_updated' => date('Y-m-d H:i:s')
+                ];
+            }
+        }
 
         $this->db->table('inventory')->ignore(true)->insertBatch($data);
     }
