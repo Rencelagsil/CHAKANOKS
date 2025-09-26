@@ -53,7 +53,7 @@ class InventoryModel extends Model
     {
         $builder = $this->select('inventory.*, products.product_name, products.product_code, products.unit')
                        ->join('products', 'products.id = inventory.product_id')
-                       ->where('inventory.current_stock <= inventory.reorder_point')
+                       ->where('inventory.current_stock <= inventory.min_stock_level')
                        ->where('products.is_active', 1);
 
         if ($branchId) {
@@ -67,7 +67,7 @@ class InventoryModel extends Model
     {
         $builder = $this->select('inventory.*, products.product_name, products.product_code, products.unit')
                        ->join('products', 'products.id = inventory.product_id')
-                       ->where('inventory.current_stock <= inventory.min_stock_level')
+                       ->where('inventory.current_stock <= inventory.reorder_point')
                        ->where('products.is_active', 1);
 
         if ($branchId) {
@@ -121,5 +121,125 @@ class InventoryModel extends Model
         $result = $builder->first();
         return $result['total_value'] ?? 0;
     }
+
+    public function getBranchInventory($branchId)
+    {
+        return $this->select('inventory.*, products.product_name, products.product_code, products.unit, products.unit_price, products.category')
+                   ->join('products', 'products.id = inventory.product_id')
+                   ->where('inventory.branch_id', $branchId)
+                   ->where('products.is_active', 1)
+                   ->findAll();
+    }
+
+    public function getCriticalStockItemsByBranch($branchId)
+    {
+        return $this->select('inventory.*, products.product_name, products.product_code, products.unit')
+                   ->join('products', 'products.id = inventory.product_id')
+                   ->where('inventory.branch_id', $branchId)
+                   ->where('inventory.current_stock <= inventory.min_stock_level')
+                   ->where('products.is_active', 1)
+                   ->findAll();
+    }
+
+    public function getStockLevels($branchId)
+    {
+        return $this->select('inventory.*, products.product_name, products.product_code, products.unit, products.unit_price')
+                   ->join('products', 'products.id = inventory.product_id')
+                   ->where('inventory.branch_id', $branchId)
+                   ->where('products.is_active', 1)
+                   ->orderBy('inventory.current_stock', 'ASC')
+                   ->findAll();
+    }
+
+    public function getRecentDeliveries($branchId)
+    {
+        // This would typically join with a deliveries table
+        // For now, return empty array as placeholder
+        return [];
+    }
+
+    public function getExpiringItems($branchId)
+    {
+        // This would typically join with a products table that has expiry dates
+        // For now, return empty array as placeholder
+        return [];
+    }
+
+    // Admin-specific methods for cross-branch inventory management
+    public function getTotalStockAcrossBranches($productId)
+    {
+        $result = $this->selectSum('current_stock')
+                    ->where('product_id', $productId)
+                    ->get()
+                    ->getRow();
+        
+        return $result ? $result->current_stock : 0;
+    }
+
+    public function getProductStockByBranch($productId)
+    {
+        return $this->select('inventory.*, branches.name as branch_name')
+                   ->join('branches', 'branches.id = inventory.branch_id')
+                   ->where('inventory.product_id', $productId)
+                   ->findAll();
+    }
+
+    public function getTotalProductCount()
+    {
+        $productModel = new \App\Models\ProductModel();
+        return $productModel->countAll();
+    }
+
+    public function getActiveProductCount()
+    {
+        $productModel = new \App\Models\ProductModel();
+        return $productModel->where('is_active', 1)->countAllResults();
+    }
+
+    public function getPerishableProductCount()
+    {
+        $productModel = new \App\Models\ProductModel();
+        return $productModel->where('is_perishable', 1)->countAllResults();
+    }
+
+    public function getProductCount($branchId)
+    {
+        return $this->where('branch_id', $branchId)->countAllResults();
+    }
+
+    public function getLowStockCount($branchId)
+    {
+        $result = $this->where('branch_id', $branchId)->findAll();
+        $count = 0;
+        foreach ($result as $item) {
+            if ($item['current_stock'] <= $item['min_stock_level']) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
+    public function getCriticalStockCount($branchId)
+    {
+        $result = $this->where('branch_id', $branchId)->findAll();
+        $count = 0;
+        foreach ($result as $item) {
+            if ($item['current_stock'] <= $item['reorder_point']) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
+
+    public function getBranchCriticalItems($branchId)
+    {
+        return $this->select('inventory.*, products.product_name, products.product_code, products.unit')
+                   ->join('products', 'products.id = inventory.product_id')
+                   ->where('inventory.branch_id', $branchId)
+                   ->where('inventory.current_stock <=', 'inventory.reorder_point', false)
+                   ->findAll();
+    }
+
 }
 
