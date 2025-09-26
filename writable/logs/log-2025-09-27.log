@@ -1,0 +1,693 @@
+CRITICAL - 2025-09-27 00:13:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:13:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:13:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:13:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:14:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:14:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:14:39 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:14:39 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:15:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:15:09 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:15:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:15:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:16:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:16:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:16:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:16:38 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/critical-alerts]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:08 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/api/inventory-data]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:23 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: dashboard]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:25 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: branchmanager/inventory]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:26 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: dashboard]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:28 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: dashboard]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:28 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: staff/stock-levels]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:29 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: staff/reports]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:29 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: staff/damages-expired]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:17:29 --> ErrorException: Cannot redeclare App\Models\InventoryModel::getBranchInventory()
+[Method: GET, Route: staff/deliveries]
+in APPPATH\Models\InventoryModel.php on line 224.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-27 00:21:56 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/inventory]
+in APPPATH\Controllers\Dashboard.php on line 343.
+ 1 APPPATH\Controllers\Dashboard.php(343): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 343)
+ 2 APPPATH\Controllers\Dashboard.php(224): App\Controllers\Dashboard->getLowStockAlerts()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminInventory()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-27 00:21:59 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-09-27 00:21:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'branches.name' in 'field list'
+[Method: GET, Route: admin/products]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 6 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 00:21:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'branches.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 8 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 00:21:59 --> [Caused by] mysqli_sql_exception: Unknown column 'branches.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 9 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 00:22:06 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/inventory]
+in APPPATH\Controllers\Dashboard.php on line 343.
+ 1 APPPATH\Controllers\Dashboard.php(343): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 343)
+ 2 APPPATH\Controllers\Dashboard.php(224): App\Controllers\Dashboard->getLowStockAlerts()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminInventory()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-27 00:22:08 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-09-27 00:22:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'branches.name' in 'field list'
+[Method: GET, Route: admin/products]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 6 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 00:22:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'branches.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 8 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 00:22:08 --> [Caused by] mysqli_sql_exception: Unknown column 'branches.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventory`.*, `branches`.`name` as `branch_name`
+FROM `inventory`
+JOIN `branches` ON `branches`.`id` = `inventory`.`branch_id`
+WHERE `inventory`.`product_id` = :inventory.product_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Dashboard.php(378): App\Models\InventoryModel->getProductStockByBranch('1')
+ 9 APPPATH\Controllers\Dashboard.php(238): App\Controllers\Dashboard->getAllProductsWithStock()
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-27 00:26:54 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:26:58 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(410): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(250): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:26:58 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:26:58 --> Admin Products Error: Undefined array key "name"
+CRITICAL - 2025-09-27 00:26:58 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/products]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:27:03 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(410): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(250): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:27:03 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:27:03 --> Admin Products Error: Undefined array key "name"
+CRITICAL - 2025-09-27 00:27:03 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/products]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:27:06 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:32:09 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:33:59 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:34:02 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:34:05 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:34:07 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(410): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(250): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:34:07 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:34:07 --> Admin Products Error: Undefined array key "name"
+CRITICAL - 2025-09-27 00:34:07 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/products]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:34:42 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:34:42 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(410): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(250): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:34:42 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:34:42 --> Admin Products Error: Undefined array key "name"
+CRITICAL - 2025-09-27 00:34:42 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/products]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:35:03 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:35:14 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:37:55 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:37:56 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(410): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(250): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:37:56 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:38:09 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:38:58 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:39:06 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 00:44:07 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:44:07 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 00:44:07 --> Admin Inventory Error: Undefined array key "branch_name"
+CRITICAL - 2025-09-27 00:44:07 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/inventory]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:47:33 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:33 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:33 --> Admin Inventory Error: Undefined array key "branch_name"
+CRITICAL - 2025-09-27 00:47:33 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/inventory]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:47:34 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:34 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:34 --> Admin Inventory Error: Undefined array key "branch_name"
+CRITICAL - 2025-09-27 00:47:34 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/inventory]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:47:38 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:38 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:38 --> Admin Inventory Error: Undefined array key "branch_name"
+CRITICAL - 2025-09-27 00:47:38 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/inventory]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:47:44 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(447): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(259): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 00:47:44 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 00:47:50 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:50 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 00:47:50 --> Admin Inventory Error: Undefined array key "branch_name"
+CRITICAL - 2025-09-27 00:47:50 --> ErrorException: Cannot redeclare createNavItem() (previously declared in C:\xampp\htdocs\CHAKANOKS\app\Views\shared\sidebar.php:14)
+[Method: GET, Route: admin/inventory]
+in APPPATH\Views\shared\sidebar.php on line 24.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-27 00:50:28 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 00:50:28 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 00:50:28 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:50 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:50 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:50 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:53 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:53 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:53 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:57 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(447): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(259): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 01:03:57 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 01:03:57 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(447): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(259): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 01:03:57 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 01:03:59 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:59 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:03:59 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:10 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:10 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:10 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:31 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:31 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:31 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:33 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:33 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:04:33 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:07:59 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:07:59 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:07:59 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:00 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:00 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:00 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:01 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:08:02 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:09:14 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:09:14 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:09:14 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:24 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:24 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:24 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:26 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:33 --> mysqli_sql_exception: Unknown column 'branches.name' in 'field list' in C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\CHAKANOKS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `invento...', 0)
+#1 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `invento...')
+#2 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `invento...')
+#3 C:\xampp\htdocs\CHAKANOKS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `invento...', Array, false)
+#4 C:\xampp\htdocs\CHAKANOKS\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\CHAKANOKS\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\CHAKANOKS\app\Models\InventoryModel.php(184): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(451): App\Models\InventoryModel->getProductStockByBranch('1')
+#8 C:\xampp\htdocs\CHAKANOKS\app\Controllers\Dashboard.php(259): App\Controllers\Dashboard->getAllProductsWithStock()
+#9 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(933): App\Controllers\Dashboard->adminProducts()
+#10 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#11 C:\xampp\htdocs\CHAKANOKS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\CHAKANOKS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\CHAKANOKS\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+ERROR - 2025-09-27 01:11:33 --> getAllProductsWithStock Error: Unknown column 'branches.name' in 'field list'
+ERROR - 2025-09-27 01:11:35 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:35 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:11:36 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:57 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:57 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:57 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:57 --> Inventory Summary is empty - checking individual branch data
+ERROR - 2025-09-27 01:13:57 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:59 --> getCriticalStockItemsWithBranchInfo Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:59 --> getLowStockAlerts Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:59 --> getInventorySummary Error: Undefined array key "name"
+ERROR - 2025-09-27 01:13:59 --> Inventory Summary is empty - checking individual branch data
+ERROR - 2025-09-27 01:13:59 --> Admin Inventory Error: Undefined array key "name"
+CRITICAL - 2025-09-27 01:14:40 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/debug-inventory]
+in APPPATH\Controllers\Dashboard.php on line 558.
+ 1 APPPATH\Controllers\Dashboard.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->debugInventory()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 01:14:49 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/debug-inventory]
+in APPPATH\Controllers\Dashboard.php on line 558.
+ 1 APPPATH\Controllers\Dashboard.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->debugInventory()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 01:14:50 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/debug-inventory]
+in APPPATH\Controllers\Dashboard.php on line 558.
+ 1 APPPATH\Controllers\Dashboard.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->debugInventory()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 01:14:50 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/debug-inventory]
+in APPPATH\Controllers\Dashboard.php on line 558.
+ 1 APPPATH\Controllers\Dashboard.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->debugInventory()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-27 01:14:51 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/debug-inventory]
+in APPPATH\Controllers\Dashboard.php on line 558.
+ 1 APPPATH\Controllers\Dashboard.php(558): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Controllers\\Dashboard.php', 558)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->debugInventory()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-27 01:16:44 --> Admin Inventory Error: Undefined array key "name"
+ERROR - 2025-09-27 01:16:45 --> Admin Inventory Error: Undefined array key "name"
+CRITICAL - 2025-09-27 01:19:41 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/branch-inventory/1]
+in APPPATH\Views\admin\branch_inventory.php on line 12.
+ 1 APPPATH\Views\admin\branch_inventory.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\admin\\branch_inventory.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\CHAKANOKS\\app\\Views\\admin\\branch_inventory.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/branch_inventory', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(324): view('admin/branch_inventory', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->branchInventory('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(61): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

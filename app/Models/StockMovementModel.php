@@ -96,5 +96,16 @@ class StockMovementModel extends Model
                       ->limit($limit)
                       ->findAll();
     }
+
+    public function getBranchMovements($branchId, $limit = 50)
+    {
+        return $this->select('stock_movements.*, products.product_name, products.product_code, users.first_name, users.last_name')
+                   ->join('products', 'products.id = stock_movements.product_id')
+                   ->join('users', 'users.id = stock_movements.created_by')
+                   ->where('stock_movements.branch_id', $branchId)
+                   ->orderBy('stock_movements.created_at', 'DESC')
+                   ->limit($limit)
+                   ->findAll();
+    }
 }
 

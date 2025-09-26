@@ -74,5 +74,13 @@ class ProductModel extends Model
     {
         return $this->where('barcode', $barcode)->first();
     }
+
+    public function getCategories()
+    {
+        return $this->select('category')
+                   ->distinct()
+                   ->where('category IS NOT NULL')
+                   ->findAll();
+    }
 }
 

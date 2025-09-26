@@ -239,6 +239,82 @@
   </div>
 </div>
 
+<!-- Product Information Modal (View Only) -->
+<div class="modal fade" id="productInfoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header border-warning">
+        <h5 class="modal-title text-warning">
+          <i class="bi bi-info-circle"></i> Product Information
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h6 class="text-warning">Product Details</h6>
+            <table class="table table-dark table-sm">
+              <tr>
+                <td><strong>Name:</strong></td>
+                <td id="viewProductName">-</td>
+              </tr>
+              <tr>
+                <td><strong>Code:</strong></td>
+                <td id="viewProductCode">-</td>
+              </tr>
+              <tr>
+                <td><strong>Category:</strong></td>
+                <td id="viewProductCategory">-</td>
+              </tr>
+              <tr>
+                <td><strong>Unit:</strong></td>
+                <td id="viewProductUnit">-</td>
+              </tr>
+              <tr>
+                <td><strong>Price:</strong></td>
+                <td id="viewProductPrice">-</td>
+              </tr>
+              <tr>
+                <td><strong>Barcode:</strong></td>
+                <td id="viewProductBarcode">-</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h6 class="text-warning">Stock Information</h6>
+            <table class="table table-dark table-sm">
+              <tr>
+                <td><strong>Current Stock:</strong></td>
+                <td id="viewCurrentStock">-</td>
+              </tr>
+              <tr>
+                <td><strong>Min Stock Level:</strong></td>
+                <td id="viewMinStock">-</td>
+              </tr>
+              <tr>
+                <td><strong>Reorder Point:</strong></td>
+                <td id="viewReorderPoint">-</td>
+              </tr>
+              <tr>
+                <td><strong>Status:</strong></td>
+                <td id="viewStockStatus">-</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="alert alert-info mt-3">
+          <i class="bi bi-info-circle"></i>
+          <strong>Note:</strong> As a Branch Manager, you can view product information but cannot edit stock levels. 
+          Only Inventory Staff can make stock adjustments.
+        </div>
+      </div>
+      <div class="modal-footer border-warning">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 // Global variables
 let inventoryData = [];
@@ -465,18 +541,50 @@ function openBarcodeScanner() {
   new bootstrap.Modal(document.getElementById('barcodeModal')).show();
 }
 
-function searchByBarcode() {
+async function searchByBarcode() {
   const barcode = document.getElementById('manualBarcode').value;
   if (!barcode) return;
   
-  const item = inventoryData.find(s => s.barcode === barcode || s.product_code === barcode);
-  
-  if (item) {
-    bootstrap.Modal.getInstance(document.getElementById('barcodeModal')).hide();
-    quickAdjustStock(item.id);
-  } else {
-    showAlert('Product not found with barcode: ' + barcode, 'warning');
+  try {
+    const response = await fetch(`/CHAKANOKS/inventory/api/search-barcode/${barcode}`);
+    const result = await response.json();
+    
+    if (result.success && result.data) {
+      bootstrap.Modal.getInstance(document.getElementById('barcodeModal')).hide();
+      showProductInfo(result.data);
+    } else {
+      showAlert('Product not found with barcode: ' + barcode, 'warning');
+    }
+  } catch (error) {
+    console.error('Error searching barcode:', error);
+    showAlert('Error searching barcode: ' + error.message, 'danger');
   }
+}
+
+function showProductInfo(product) {
+  // Update the product info modal with the scanned product data
+  document.getElementById('viewProductName').textContent = product.product_name;
+  document.getElementById('viewProductCode').textContent = product.product_code;
+  document.getElementById('viewProductCategory').textContent = product.category;
+  document.getElementById('viewProductUnit').textContent = product.unit;
+  document.getElementById('viewProductPrice').textContent = '₱' + product.unit_price;
+  document.getElementById('viewProductBarcode').textContent = product.barcode;
+  document.getElementById('viewCurrentStock').textContent = product.current_stock;
+  document.getElementById('viewMinStock').textContent = product.min_stock_level;
+  document.getElementById('viewReorderPoint').textContent = product.reorder_point;
+  
+  // Show stock status
+  const stockStatus = document.getElementById('viewStockStatus');
+  if (product.current_stock <= product.min_stock_level) {
+    stockStatus.innerHTML = '<span class="badge bg-danger">Low Stock</span>';
+  } else if (product.current_stock <= product.reorder_point) {
+    stockStatus.innerHTML = '<span class="badge bg-warning">Reorder Soon</span>';
+  } else {
+    stockStatus.innerHTML = '<span class="badge bg-success">In Stock</span>';
+  }
+  
+  // Show the product info modal
+  new bootstrap.Modal(document.getElementById('productInfoModal')).show();
 }
 
 function quickAdjustStock(productId) {

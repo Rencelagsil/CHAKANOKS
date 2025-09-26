@@ -218,38 +218,11 @@ class Dashboard extends Controller
         }
 
         try {
-            // Debug: Check if models are working
-            log_message('info', 'Starting adminInventory method');
-            
             $branches = $this->branchModel->getActiveBranches();
-            log_message('info', 'Branches retrieved: ' . count($branches));
-            
             $totalInventoryValue = $this->getTotalInventoryValue();
-            log_message('info', 'Total inventory value: ' . $totalInventoryValue);
-            
             $criticalStockItems = $this->getCriticalStockItemsWithBranchInfo();
-            log_message('info', 'Critical stock items: ' . count($criticalStockItems));
-            
             $lowStockAlerts = $this->getLowStockAlerts();
-            log_message('info', 'Low stock alerts: ' . count($lowStockAlerts));
-            
             $inventorySummary = $this->getInventorySummary();
-            log_message('info', 'Inventory summary: ' . count($inventorySummary));
-            
-            // Debug logging
-            log_message('info', 'Admin Inventory Data: Branches=' . count($branches) . ', Value=' . $totalInventoryValue . ', Critical=' . count($criticalStockItems) . ', Alerts=' . count($lowStockAlerts) . ', Summary=' . count($inventorySummary));
-            
-            // Additional debugging for inventory summary
-            if (empty($inventorySummary)) {
-                log_message('error', 'Inventory Summary is empty - checking individual branch data');
-                foreach ($branches as $branch) {
-                    $productCount = $this->inventoryModel->getProductCount($branch['id']);
-                    $inventoryValue = $this->inventoryModel->getInventoryValue($branch['id']);
-                    log_message('info', "Branch {$branch['branch_name']} (ID: {$branch['id']}): Products={$productCount}, Value={$inventoryValue}");
-                }
-            } else {
-                log_message('info', 'Inventory Summary data: ' . json_encode($inventorySummary));
-            }
             
             $data = [
                 'branches' => $branches,
@@ -382,15 +355,10 @@ class Dashboard extends Controller
         $branches = $this->branchModel->getActiveBranches();
         $totalValue = 0;
         
-        log_message('info', 'getTotalInventoryValue: Found ' . count($branches) . ' branches');
-        
         foreach ($branches as $branch) {
-            $branchValue = $this->inventoryModel->getInventoryValue($branch['id']);
-            log_message('info', "Branch {$branch['branch_name']}: Value = {$branchValue}");
-            $totalValue += $branchValue;
+            $totalValue += $this->inventoryModel->getInventoryValue($branch['id']);
         }
         
-        log_message('info', 'Total inventory value calculated: ' . $totalValue);
         return $totalValue;
     }
 
@@ -401,15 +369,11 @@ class Dashboard extends Controller
             $branches = $this->branchModel->getActiveBranches();
             
             if (empty($branches)) {
-                log_message('error', 'No branches found for low stock alerts');
                 return [];
             }
             
-            log_message('info', 'Checking low stock alerts for ' . count($branches) . ' branches');
-            
             foreach ($branches as $branch) {
                 $lowStockItems = $this->inventoryModel->getLowStockItems($branch['id']);
-                log_message('info', "Branch {$branch['branch_name']}: Found " . count($lowStockItems) . " low stock items");
                 if (!empty($lowStockItems)) {
                     $alerts[] = [
                         'branch_id' => $branch['id'],
@@ -419,10 +383,8 @@ class Dashboard extends Controller
                 }
             }
             
-            log_message('info', 'Total low stock alerts: ' . count($alerts));
             return $alerts;
         } catch (\Exception $e) {
-            log_message('error', 'getLowStockAlerts Error: ' . $e->getMessage());
             return [];
         }
     }
@@ -434,11 +396,8 @@ class Dashboard extends Controller
             $summary = [];
             
             if (empty($branches)) {
-                log_message('error', 'No branches found in getInventorySummary');
                 return [];
             }
-            
-            log_message('info', 'Found ' . count($branches) . ' branches for inventory summary');
             
             foreach ($branches as $branch) {
                 $productCount = $this->inventoryModel->getProductCount($branch['id']);
@@ -446,9 +405,6 @@ class Dashboard extends Controller
                 $lowStockCount = $this->inventoryModel->getLowStockCount($branch['id']);
                 $criticalCount = $this->inventoryModel->getCriticalStockCount($branch['id']);
                 
-                log_message('info', "Branch {$branch['branch_name']}: Products={$productCount}, Value={$inventoryValue}, Low={$lowStockCount}, Critical={$criticalCount}");
-                
-                // Always add to summary, even if values are 0
                 $summary[] = [
                     'branch_id' => $branch['id'],
                     'branch_name' => $branch['branch_name'],
@@ -459,10 +415,8 @@ class Dashboard extends Controller
                 ];
             }
             
-            log_message('info', 'Inventory Summary: ' . count($summary) . ' branches with data');
             return $summary;
         } catch (\Exception $e) {
-            log_message('error', 'getInventorySummary Error: ' . $e->getMessage());
             return [];
         }
     }
@@ -535,7 +489,6 @@ class Dashboard extends Controller
             $criticalItems = [];
             
             if (empty($branches)) {
-                log_message('error', 'No branches found for critical stock items');
                 return [];
             }
             
@@ -547,55 +500,10 @@ class Dashboard extends Controller
                 }
             }
             
-            log_message('info', 'Found ' . count($criticalItems) . ' critical stock items across all branches');
             return $criticalItems;
         } catch (\Exception $e) {
-            log_message('error', 'getCriticalStockItemsWithBranchInfo Error: ' . $e->getMessage());
             return [];
         }
     }
 
-    // Debug method to test data retrieval
-    public function debugInventory()
-    {
-        if (!session()->get('is_logged_in') || session()->get('role') !== 'admin') {
-            return redirect()->to(base_url('login'));
-        }
-
-        try {
-            $branches = $this->branchModel->getActiveBranches();
-            $debug = [
-                'branches_count' => count($branches),
-                'branches_data' => $branches,
-                'inventory_data' => []
-            ];
-            
-            foreach ($branches as $branch) {
-                $productCount = $this->inventoryModel->getProductCount($branch['id']);
-                $inventoryValue = $this->inventoryModel->getInventoryValue($branch['id']);
-                $lowStockCount = $this->inventoryModel->getLowStockCount($branch['id']);
-                $criticalCount = $this->inventoryModel->getCriticalStockCount($branch['id']);
-                
-                $debug['inventory_data'][] = [
-                    'branch_name' => $branch['branch_name'],
-                    'branch_id' => $branch['id'],
-                    'product_count' => $productCount,
-                    'inventory_value' => $inventoryValue,
-                    'low_stock_count' => $lowStockCount,
-                    'critical_count' => $criticalCount
-                ];
-            }
-            
-            return $this->response->setJSON([
-                'success' => true,
-                'data' => $debug
-            ]);
-        } catch (\Exception $e) {
-            return $this->response->setJSON([
-                'success' => false,
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-        }
-    }
 }

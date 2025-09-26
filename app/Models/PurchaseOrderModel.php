@@ -106,5 +106,61 @@ class PurchaseOrderModel extends Model
 
         return $prefix . str_pad($newNumber, 4, '0', STR_PAD_LEFT);
     }
+
+    public function getActiveDeliveries()
+    {
+        return $this->select('purchase_orders.*, suppliers.company_name, branches.branch_name')
+                   ->join('suppliers', 'suppliers.id = purchase_orders.supplier_id')
+                   ->join('branches', 'branches.id = purchase_orders.branch_id')
+                   ->where('purchase_orders.status', 'ordered')
+                   ->orderBy('purchase_orders.expected_delivery', 'ASC')
+                   ->findAll();
+    }
+
+    public function getScheduledDeliveries()
+    {
+        return $this->select('purchase_orders.*, suppliers.company_name, branches.branch_name')
+                   ->join('suppliers', 'suppliers.id = purchase_orders.supplier_id')
+                   ->join('branches', 'branches.id = purchase_orders.branch_id')
+                   ->where('purchase_orders.status', 'approved')
+                   ->where('purchase_orders.expected_delivery >=', date('Y-m-d'))
+                   ->orderBy('purchase_orders.expected_delivery', 'ASC')
+                   ->findAll();
+    }
+
+    public function getSupplierOrders()
+    {
+        // This would typically filter by supplier_id from session
+        // For now, return all pending orders
+        return $this->select('purchase_orders.*, branches.branch_name')
+                   ->join('branches', 'branches.id = purchase_orders.branch_id')
+                   ->where('purchase_orders.status', 'approved')
+                   ->orderBy('purchase_orders.created_at', 'DESC')
+                   ->findAll();
+    }
+
+    public function getRecentSupplierOrders()
+    {
+        return $this->select('purchase_orders.*, branches.branch_name')
+                   ->join('branches', 'branches.id = purchase_orders.branch_id')
+                   ->where('purchase_orders.status', 'delivered')
+                   ->where('purchase_orders.updated_at >=', date('Y-m-d', strtotime('-7 days')))
+                   ->orderBy('purchase_orders.updated_at', 'DESC')
+                   ->findAll();
+    }
+
+    public function getFranchiseApplications()
+    {
+        // This would typically join with a franchise_applications table
+        // For now, return empty array as placeholder
+        return [];
+    }
+
+    public function getFranchiseAllocations()
+    {
+        // This would typically join with a franchise_allocations table
+        // For now, return empty array as placeholder
+        return [];
+    }
 }
 

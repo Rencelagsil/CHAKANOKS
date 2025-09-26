@@ -30,7 +30,7 @@ class UserModel extends Model
         'password' => 'required|min_length[6]',
         'first_name' => 'required|min_length[2]|max_length[100]',
         'last_name' => 'required|min_length[2]|max_length[100]',
-        'role' => 'required|in_list[admin,branch_manager,inventory_staff,logistics_coordinator,supplier,franchise_manager]',
+        'role' => 'required|in_list[admin,branch_manager,inventory_staff,logistics_coordinator,supplier,franchise_manager,system_admin]',
         'branch_id' => 'permit_empty|integer',
         'is_active' => 'permit_empty|in_list[0,1]'
     ];

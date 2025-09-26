@@ -70,23 +70,7 @@ class Login extends Controller
 
     private function redirectToDashboard()
     {
-        $role = session()->get('role');
-        
-        switch ($role) {
-            case 'admin':
-                return redirect()->to(base_url('dashboard'));
-            case 'branch_manager':
-                return redirect()->to(base_url('branchmanager'));
-            case 'inventory_staff':
-                return redirect()->to(base_url('staff'));
-            case 'logistics_coordinator':
-                return redirect()->to(base_url('logistics'));
-            case 'supplier':
-                return redirect()->to(base_url('supplier'));
-            case 'franchise_manager':
-                return redirect()->to(base_url('franchise'));
-            default:
-                return redirect()->to(base_url('dashboard'));
-        }
+        // Redirect all users to unified dashboard
+        return redirect()->to(base_url('dashboard'));
     }
 }

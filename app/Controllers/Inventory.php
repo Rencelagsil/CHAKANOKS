@@ -88,6 +88,66 @@ class Inventory extends BaseController
         }
     }
 
+    public function searchBarcode($barcode)
+    {
+        // Set CORS headers for API access
+        $this->response->setHeader('Access-Control-Allow-Origin', '*');
+        $this->response->setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        $this->response->setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        
+        try {
+            if (empty($barcode)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Barcode is required'
+                ]);
+            }
+
+            // Search for product by barcode
+            $product = $this->productModel->getProductByBarcode($barcode);
+
+            if ($product) {
+                // Get inventory data for this product in current branch
+                $branchId = session('branch_id') ?? 1;
+                $inventory = $this->inventoryModel->where('product_id', $product['id'])
+                                               ->where('branch_id', $branchId)
+                                               ->first();
+
+                $data = [
+                    'id' => $product['id'],
+                    'product_code' => $product['product_code'],
+                    'product_name' => $product['product_name'],
+                    'description' => $product['description'],
+                    'category' => $product['category'],
+                    'unit' => $product['unit'],
+                    'unit_price' => $product['unit_price'],
+                    'barcode' => $product['barcode'],
+                    'is_perishable' => $product['is_perishable'],
+                    'shelf_life_days' => $product['shelf_life_days'],
+                    'current_stock' => $inventory ? $inventory['current_stock'] : 0,
+                    'min_stock_level' => $inventory ? $inventory['min_stock_level'] : 0,
+                    'reorder_point' => $inventory ? $inventory['reorder_point'] : 0
+                ];
+
+                return $this->response->setJSON([
+                    'success' => true,
+                    'message' => 'Product found',
+                    'data' => $data
+                ]);
+            } else {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'message' => 'Product not found for barcode: ' . $barcode
+                ]);
+            }
+        } catch (\Exception $e) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Barcode search error: ' . $e->getMessage()
+            ]);
+        }
+    }
+
     public function getStockData()
     {
         // Set CORS headers for API access

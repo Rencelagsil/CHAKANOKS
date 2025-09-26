@@ -23,6 +23,17 @@ $routes->get('branchmanager', 'BranchManager::index', ['filter' => 'auth']);
 $routes->get('staff', 'Staff::index', ['filter' => 'auth']);
 $routes->get('logistics', 'Logistics::index', ['filter' => 'auth']);
 
+// Central Office Admin routes (admin role only)
+$routes->group('admin', ['filter' => 'auth'], static function($routes) {
+    $routes->get('inventory', 'Dashboard::adminInventory');
+    $routes->get('products', 'Dashboard::adminProducts');
+    $routes->get('branch-inventory/(:num)', 'Dashboard::branchInventory/$1');
+    
+        // Admin API routes
+        $routes->get('api/inventory-data', 'Dashboard::getInventoryData');
+        $routes->get('api/product-data', 'Dashboard::getProductData');
+});
+
 // Inventory Staff subpages
 $routes->group('staff', ['filter' => 'auth'], static function($routes) {
     $routes->get('stock-levels', 'Staff::stockLevels');
@@ -43,6 +54,7 @@ $routes->group('inventory', ['filter' => 'auth'], static function($routes) {
     // API routes
     $routes->get('api/test', 'Inventory::testApi');
     $routes->get('api/stock-data', 'Inventory::getStockData');
+    $routes->get('api/search-barcode/(:any)', 'Inventory::searchBarcode/$1');
     $routes->post('api/save-stock', 'Inventory::saveStock');
     $routes->post('api/adjust-stock', 'Inventory::adjustStock');
     $routes->delete('api/delete-stock/(:num)', 'Inventory::deleteStock/$1');

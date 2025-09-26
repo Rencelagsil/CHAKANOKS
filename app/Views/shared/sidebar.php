@@ -1,3 +1,106 @@
+<?php
+/**
+ * Role-Based Access Control (RBAC) Helper Functions
+ * Centralized navigation logic for cleaner code organization
+ */
+
+// Get current user role and path
+$currentRole = session()->get('role');
+$currentPath = uri_string();
+
+/**
+ * Generate navigation item HTML
+ */
+function createNavItem($icon, $text, $url = null, $isActive = false, $badge = null, $onclick = null) {
+    $activeClass = $isActive ? 'active' : '';
+    $onclickAttr = $onclick ? "onclick=\"$onclick\"" : '';
+    $urlAttr = $url ? "onclick=\"window.location.href='$url'\"" : '';
+    
+    $badgeHtml = $badge ? "<span class=\"badge bg-warning text-dark ms-auto\">$badge</span>" : '';
+    
+    return "<div class=\"nav-item $activeClass\" $urlAttr $onclickAttr>
+        <i class=\"$icon\"></i>
+        $text
+        $badgeHtml
+    </div>";
+}
+
+/**
+ * Get role-specific navigation items
+ */
+function getRoleNavigation($role, $currentPath) {
+    switch ($role) {
+        case 'admin':
+            return [
+                createNavItem('bi bi-boxes', 'Inventory Overview', base_url('admin/inventory'), $currentPath === 'admin/inventory'),
+                createNavItem('bi bi-box-seam', 'Products Management', base_url('admin/products'), $currentPath === 'admin/products'),
+                createNavItem('bi bi-cart', 'Purchase Orders', null, false, '5', "alert('Purchase Orders - Coming Soon')"),
+                createNavItem('bi bi-people', 'Suppliers', null, false, null, "alert('Suppliers - Coming Soon')"),
+                createNavItem('bi bi-truck', 'Deliveries & Logistics', null, false, '2', "alert('Deliveries & Logistics - Coming Soon')"),
+                createNavItem('bi bi-arrow-left-right', 'Branch Transfers', null, false, null, "alert('Branch Transfers - Coming Soon')"),
+                createNavItem('bi bi-bar-chart', 'Reports & Analytics', null, false, null, "alert('Reports & Analytics - Coming Soon')"),
+                createNavItem('bi bi-shop', 'Franchising', null, false, '4', "alert('Franchising - Coming Soon')"),
+                createNavItem('bi bi-person-gear', 'User Management', null, false, null, "alert('User Management - Coming Soon')")
+            ];
+            
+        case 'branch_manager':
+            return [
+                createNavItem('bi bi-box-seam', 'Inventory', base_url('branchmanager/inventory'), $currentPath === 'branchmanager/inventory'),
+                createNavItem('bi bi-cart', 'Purchase Req', base_url('branchmanager/purchase-requests'), $currentPath === 'branchmanager/purchase-requests'),
+                createNavItem('bi bi-arrow-left-right', 'Transfers', base_url('branchmanager/transfers'), $currentPath === 'branchmanager/transfers'),
+                createNavItem('bi bi-bar-chart', 'Reports', base_url('branchmanager/reports'), $currentPath === 'branchmanager/reports')
+            ];
+            
+        case 'inventory_staff':
+            return [
+                createNavItem('bi bi-box-seam', 'Stock Levels', base_url('staff/stock-levels'), $currentPath === 'staff/stock-levels'),
+                createNavItem('bi bi-truck', 'Deliveries', base_url('staff/deliveries'), $currentPath === 'staff/deliveries'),
+                createNavItem('bi bi-exclamation-triangle', 'Damaged/Expired', base_url('staff/damages-expired'), $currentPath === 'staff/damages-expired'),
+                createNavItem('bi bi-bar-chart', 'Reports', base_url('staff/reports'), $currentPath === 'staff/reports')
+            ];
+            
+        case 'logistics_coordinator':
+            return [
+                createNavItem('bi bi-calendar', 'Delivery Schedule', null, false, null, "alert('Delivery Schedule - Coming Soon')"),
+                createNavItem('bi bi-truck', 'Track Deliveries', null, false, null, "alert('Track Deliveries - Coming Soon')"),
+                createNavItem('bi bi-geo-alt', 'Route Optimization', null, false, null, "alert('Route Optimization - Coming Soon')"),
+                createNavItem('bi bi-bar-chart', 'Reports', null, false, null, "alert('Reports - Coming Soon')")
+            ];
+            
+        case 'supplier':
+            return [
+                createNavItem('bi bi-list-check', 'View Orders', null, false, null, "alert('View Orders - Coming Soon')"),
+                createNavItem('bi bi-pencil-square', 'Update Status', null, false, null, "alert('Update Status - Coming Soon')"),
+                createNavItem('bi bi-receipt', 'Submit Invoice', null, false, null, "alert('Submit Invoice - Coming Soon')"),
+                createNavItem('bi bi-bar-chart', 'Reports', null, false, null, "alert('Reports - Coming Soon')")
+            ];
+            
+        case 'franchise_manager':
+            return [
+                createNavItem('bi bi-file-text', 'Review Applications', null, false, null, "alert('Review Applications - Coming Soon')"),
+                createNavItem('bi bi-box-seam', 'Allocate Supplies', null, false, null, "alert('Allocate Supplies - Coming Soon')"),
+                createNavItem('bi bi-credit-card', 'Track Payments', null, false, null, "alert('Track Payments - Coming Soon')"),
+                createNavItem('bi bi-bar-chart', 'Reports', null, false, null, "alert('Reports - Coming Soon')")
+            ];
+            
+        case 'system_admin':
+            return [
+                createNavItem('bi bi-people', 'User Management', null, false, null, "alert('User Management - Coming Soon')"),
+                createNavItem('bi bi-gear', 'System Settings', null, false, null, "alert('System Settings - Coming Soon')"),
+                createNavItem('bi bi-hdd-stack', 'Backup & Recovery', null, false, null, "alert('Backup & Recovery - Coming Soon')"),
+                createNavItem('bi bi-journal-text', 'System Logs', null, false, null, "alert('System Logs - Coming Soon')"),
+                createNavItem('bi bi-database', 'Database Management', null, false, null, "alert('Database Management - Coming Soon')")
+            ];
+            
+        default:
+            return [
+                createNavItem('bi bi-person-lines-fill', 'Contact Administrator', null, false, null, "alert('Contact Administrator - Coming Soon')"),
+                createNavItem('bi bi-info-circle', 'System Information', null, false, null, "alert('System Information - Coming Soon')")
+            ];
+    }
+}
+?>
+
     <!-- Sidebar -->
     <nav class="sidebar offcanvas-md offcanvas-start" id="sidebar" tabindex="-1">
       <div class="logo">
@@ -8,144 +111,16 @@
       <div class="nav-section">
         <div class="nav-section-title">Navigation</div>
 
-      <?php 
-      $currentRole = session()->get('role');
-      $currentPath = uri_string();
-      ?>
+        <!-- Universal Dashboard Link -->
+        <?= createNavItem('bi bi-grid-3x3-gap', 'Dashboard', base_url('dashboard'), $currentPath === 'dashboard') ?>
 
-      <?php if ($currentRole === 'admin'): ?>
-        <!-- Admin Navigation -->
-        <div class="nav-item <?= $currentPath === 'dashboard' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('dashboard') ?>'">
-          <i class="bi bi-grid-3x3-gap"></i>
-          Dashboard
-        </div>
-
-        <div class="nav-item" onclick="alert('Inventory Management - Coming Soon')">
-          <i class="bi bi-box-seam"></i>
-          Inventory Management
-          <span class="badge bg-warning text-dark ms-auto">3</span>
-        </div>
-
-        <div class="nav-item" onclick="alert('Purchase Orders - Coming Soon')">
-          <i class="bi bi-cart"></i>
-          Purchase Orders
-          <span class="badge bg-warning text-dark ms-auto">5</span>
-        </div>
-
-        <div class="nav-item" onclick="alert('Suppliers - Coming Soon')">
-          <i class="bi bi-people"></i>
-          Suppliers
-        </div>
-
-        <div class="nav-item" onclick="alert('Deliveries & Logistics - Coming Soon')">
-          <i class="bi bi-truck"></i>
-          Deliveries & Logistics
-          <span class="badge bg-warning text-dark ms-auto">2</span>
-        </div>
-
-        <div class="nav-item" onclick="alert('Branch Transfers - Coming Soon')">
-          <i class="bi bi-arrow-left-right"></i>
-          Branch Transfers
-        </div>
-
-        <div class="nav-item" onclick="alert('Reports & Analytics - Coming Soon')">
-          <i class="bi bi-bar-chart"></i>
-          Reports & Analytics
-        </div>
-
-        <div class="nav-item" onclick="alert('Franchising - Coming Soon')">
-          <i class="bi bi-shop"></i>
-          Franchising
-          <span class="badge bg-warning text-dark ms-auto">4</span>
-        </div>
-
-        <div class="nav-item" onclick="alert('User Management - Coming Soon')">
-          <i class="bi bi-person-gear"></i>
-          User Management
-        </div>
-
-      <?php elseif ($currentRole === 'branch_manager'): ?>
-        <!-- Branch Manager Navigation -->
-        <div class="nav-item <?= $currentPath === 'branchmanager' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('branchmanager') ?>'">
-          <i class="bi bi-grid-3x3-gap"></i>
-          Dashboard
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'branchmanager/inventory' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('branchmanager/inventory') ?>'">
-          <i class="bi bi-box-seam"></i>
-          Inventory
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'branchmanager/purchase-requests' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('branchmanager/purchase-requests') ?>'">
-          <i class="bi bi-cart"></i>
-          Purchase Req
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'branchmanager/transfers' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('branchmanager/transfers') ?>'">
-          <i class="bi bi-arrow-left-right"></i>
-          Transfers
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'branchmanager/reports' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('branchmanager/reports') ?>'">
-          <i class="bi bi-bar-chart"></i>
-          Reports
-        </div>
-
-      <?php elseif ($currentRole === 'inventory_staff'): ?>
-        <!-- Inventory Staff Navigation -->
-        <div class="nav-item <?= $currentPath === 'staff' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('staff') ?>'">
-          <i class="bi bi-grid-3x3-gap"></i>
-          Dashboard
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'staff/stock-levels' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('staff/stock-levels') ?>'">
-          <i class="bi bi-box-seam"></i>
-          Stock Levels
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'staff/deliveries' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('staff/deliveries') ?>'">
-          <i class="bi bi-truck"></i>
-          Deliveries
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'staff/damages-expired' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('staff/damages-expired') ?>'">
-          <i class="bi bi-exclamation-triangle"></i>
-          Damaged/Expired
-        </div>
-
-        <div class="nav-item <?= $currentPath === 'staff/reports' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('staff/reports') ?>'">
-          <i class="bi bi-bar-chart"></i>
-          Reports
-        </div>
-
-      <?php elseif ($currentRole === 'logistics_coordinator'): ?>
-        <!-- Logistics Coordinator Navigation -->
-        <div class="nav-item <?= $currentPath === 'logistics' ? 'active' : '' ?>" onclick="window.location.href='<?= base_url('logistics') ?>'">
-          <i class="bi bi-grid-3x3-gap"></i>
-          Dashboard
-        </div>
-
-        <div class="nav-item" onclick="alert('Delivery Schedule - Coming Soon')">
-          <i class="bi bi-calendar"></i>
-          Delivery Schedule
-        </div>
-
-        <div class="nav-item" onclick="alert('Track Deliveries - Coming Soon')">
-          <i class="bi bi-truck"></i>
-          Track Deliveries
-        </div>
-
-        <div class="nav-item" onclick="alert('Route Optimization - Coming Soon')">
-          <i class="bi bi-geo-alt"></i>
-          Route Optimization
-        </div>
-
-        <div class="nav-item" onclick="alert('Reports - Coming Soon')">
-          <i class="bi bi-bar-chart"></i>
-          Reports
-        </div>
-
-      <?php endif; ?>
+        <!-- Role-Based Navigation -->
+        <?php 
+        $roleNavigation = getRoleNavigation($currentRole, $currentPath);
+        foreach ($roleNavigation as $navItem) {
+            echo $navItem;
+        }
+        ?>
       </div>
 
       <div class="logout" onclick="logout()">
